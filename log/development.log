@@ -1,0 +1,263 @@
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_mime_type" varchar(255), "image_name" varchar(255), "image_size" integer, "image_width" integer, "image_height" integer, "created_at" datetime, "updated_at" datetime, "image_uid" varchar(255), "image_ext" varchar(255)) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE TABLE "inquiries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "phone" varchar(255), "message" text, "position" integer, "open" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime, "spam" boolean DEFAULT 'f') [0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE TABLE "inquiry_settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "value" text, "destroyable" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE TABLE "page_parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "page_id" integer, "title" varchar(255), "body" text, "position" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("page_parts")
+  [1m[36mSQL (4.4ms)[0m  [1mCREATE INDEX "index_page_parts_on_id" ON "page_parts" ("id")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("page_parts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_page_parts_on_id')[0m
+  [1m[35mSQL (1.3ms)[0m  CREATE INDEX "index_page_parts_on_page_id" ON "page_parts" ("page_id")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.9ms)[0m  CREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "parent_id" integer, "position" integer, "path" varchar(255), "created_at" datetime, "updated_at" datetime, "meta_keywords" varchar(255), "meta_description" text, "show_in_menu" boolean DEFAULT 't', "link_url" varchar(255), "menu_match" varchar(255), "deletable" boolean DEFAULT 't', "custom_title" varchar(255), "custom_title_type" varchar(255) DEFAULT 'none', "draft" boolean DEFAULT 'f', "browser_title" varchar(255), "skip_to_first_child" boolean DEFAULT 'f', "lft" integer, "rgt" integer, "depth" integer, "cached_slug" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("pages")[0m
+  [1m[35mSQL (3.7ms)[0m  CREATE INDEX "index_pages_on_depth" ON "pages" ("depth")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("pages")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_depth')
+  [1m[36mSQL (1.7ms)[0m  [1mCREATE INDEX "index_pages_on_id" ON "pages" ("id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("pages")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_pages_on_depth')
+  [1m[36mSQL (8.9ms)[0m  [1mCREATE INDEX "index_pages_on_lft" ON "pages" ("lft")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("pages")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_lft')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_depth')[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE INDEX "index_pages_on_parent_id" ON "pages" ("parent_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("pages")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_parent_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_pages_on_lft')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_pages_on_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_pages_on_depth')[0m
+  [1m[35mSQL (4.0ms)[0m  CREATE INDEX "index_pages_on_rgt" ON "pages" ("rgt")
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "refinery_settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "value" text, "destroyable" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime, "scoping" varchar(255), "restricted" boolean DEFAULT 'f', "callback_proc_as_string" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("refinery_settings")[0m
+  [1m[35mSQL (1.7ms)[0m  CREATE INDEX "index_refinery_settings_on_name" ON "refinery_settings" ("name")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (7.0ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "file_mime_type" varchar(255), "file_name" varchar(255), "file_size" integer, "created_at" datetime, "updated_at" datetime, "file_uid" varchar(255), "file_ext" varchar(255)) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255)) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.6ms)[0m  CREATE TABLE "roles_users" ("user_id" integer, "role_id" integer) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (8.6ms)[0m  CREATE TABLE "slugs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "sluggable_id" integer, "sequence" integer DEFAULT 1 NOT NULL, "sluggable_type" varchar(40), "scope" varchar(40), "created_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("slugs")[0m
+  [1m[35mSQL (48.5ms)[0m  CREATE UNIQUE INDEX "index_slugs_on_name_and_sluggable_type_and_scope_and_sequence" ON "slugs" ("name", "sluggable_type", "scope", "sequence")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("slugs")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_slugs_on_name_and_sluggable_type_and_scope_and_sequence')
+  [1m[36mSQL (8.8ms)[0m  [1mCREATE INDEX "index_slugs_on_sluggable_id" ON "slugs" ("sluggable_id")[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (5.5ms)[0m  [1mCREATE TABLE "user_plugins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar(255), "position" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("user_plugins")
+  [1m[36mSQL (2.4ms)[0m  [1mCREATE INDEX "index_user_plugins_on_title" ON "user_plugins" ("name")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("user_plugins")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_user_plugins_on_title')[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE UNIQUE INDEX "index_unique_user_plugins" ON "user_plugins" ("user_id", "name")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (5.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime, "perishable_token" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (12.4ms)[0m  CREATE INDEX "index_users_on_id" ON "users" ("id")
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (16.3ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (11.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (12.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100913234704')[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "inquiry_settings" ("created_at", "destroyable", "name", "updated_at", "value") VALUES ('2010-09-17 16:23:19.819750', 'f', 'Confirmation Body', '2010-09-17 16:23:19.819750', 'Thank you for your inquiry %name%,
+
+This email is a receipt to confirm we have received your inquiry and we''ll be in touch shortly.
+
+Thanks.')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "inquiry_settings" ("created_at", "destroyable", "name", "updated_at", "value") VALUES ('2010-09-17 16:23:19.949146', 'f', 'Notification Recipients', '2010-09-17 16:23:19.949146', '')
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mRefinerySetting Load (0.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'use_marketable_urls') AND ("refinery_settings"."scoping" = 'pages') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:20.375289', 't', 'use_marketable_urls', 'f', 'pages', '2010-09-17 16:23:20.375289', 'true')[0m
+  [1m[35mRefinerySetting Load (0.4ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" >= 0) ORDER BY refinery_settings.id ASC LIMIT 500
+  [1m[36mRefinerySetting Load (0.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-17 16:23:20.461765', NULL, 'none', 'f', NULL, 'f', 1, '/', '^/$', NULL, NULL, NULL, NULL, 0, 2, 't', 'f', 'Home', '2010-09-17 16:23:20.461765')[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (0.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'home') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."name" = 'home') AND ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page')) AS subquery
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-17 16:23:20.492275', 'home', NULL, 1, 1, 'Page')[0m
+  [1m[35mPage Load (1.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" >= 0) ORDER BY pages.id ASC LIMIT 500
+  [1m[36mPagePart Load (0.2ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC
+  [1m[36mSlug Load (0.5ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'home', "created_at" = '2010-09-17 16:23:20.461765', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = NULL, "draft" = 'f', "lft" = 1, "link_url" = '/', "menu_match" = '^/$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = NULL, "path" = NULL, "position" = 0, "rgt" = 2, "show_in_menu" = 't', "skip_to_first_child" = 'f', "title" = 'Home', "updated_at" = '2010-09-17 16:23:20.461765' WHERE ("pages"."id" = 1)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 1) ORDER BY "lft"[0m
+  [1m[35mRefinerySetting Load (0.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'refinery_menu_cache_action_suffix') AND ("refinery_settings"."scoping" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:20.619588', 't', 'refinery_menu_cache_action_suffix', 'f', NULL, '2010-09-17 16:23:20.619588', 'site_menu')[0m
+  [1m[35mRefinerySetting Load (0.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>Welcome to our site. This is just a place holder page while we gather our content.</p>', '2010-09-17 16:23:20.667122', 1, 0, 'Body', '2010-09-17 16:23:20.667122')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>This is another block of content over here.</p>', '2010-09-17 16:23:20.699046', 1, 1, 'Side Body', '2010-09-17 16:23:20.699046')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX("pages"."rgt") AS max_id FROM "pages"[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-17 16:23:20.726029', NULL, 'none', 'f', NULL, 'f', 3, NULL, '^/404$', NULL, NULL, 1, NULL, 0, 4, 'f', 'f', 'Page not found', '2010-09-17 16:23:20.726029')
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'page-not-found') AND ("slugs"."scope" IS NULL) ORDER BY id DESC
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."name" = 'page-not-found') AND ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page')) AS subquery[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-17 16:23:20.746120', 'page-not-found', NULL, 1, 2, 'Page')
+  [1m[36mPagePart Load (2.3ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 2) ORDER BY position ASC[0m
+  [1m[35mPage Load (1.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) ORDER BY "lft" LIMIT 1
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "lft" = CASE WHEN "lft" BETWEEN 2 AND 2 THEN "lft" + 4 - 2 WHEN "lft" BETWEEN 3 AND 4 THEN "lft" + 2 - 3 ELSE "lft" END, "rgt" = CASE WHEN "rgt" BETWEEN 2 AND 2 THEN "rgt" + 4 - 2 WHEN "rgt" BETWEEN 3 AND 4 THEN "rgt" + 2 - 3 ELSE "rgt" END, "parent_id" = CASE WHEN id = 2 THEN 1 ELSE "parent_id" END 
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.1ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "pages" WHERE ("pages"."lft" <= 2 AND "pages"."rgt" >= 3) AND ("pages".id != 2)) AS subquery[0m
+  [1m[35mSlug Load (0.4ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 2 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1
+  [1m[36mPage Load (1.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 2) LIMIT 1[0m
+  [1m[35mPagePart Load (0.1ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 2) ORDER BY position ASC
+  [1m[36mPagePart Load (0.2ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 2) ORDER BY position ASC[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "depth" = 1, "updated_at" = '2010-09-17 16:23:20.804239' WHERE ("pages"."id" = 2)
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'page-not-found', "created_at" = '2010-09-17 16:23:20.726029', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = 1, "draft" = 'f', "lft" = 2, "link_url" = NULL, "menu_match" = '^/404$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = 1, "path" = NULL, "position" = 0, "rgt" = 3, "show_in_menu" = 'f', "skip_to_first_child" = 'f', "title" = 'Page not found', "updated_at" = '2010-09-17 16:23:20.804239' WHERE ("pages"."id" = 2)[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 2) ORDER BY "lft"
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<h2>Sorry, there was a problem...</h2><p>The page you requested was not found.</p><p><a href=''/''>Return to the home page</a></p>', '2010-09-17 16:23:20.845484', 2, 0, 'Body', '2010-09-17 16:23:20.845484')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-17 16:23:20.853625', NULL, 'none', 't', NULL, 'f', 5, NULL, NULL, NULL, NULL, NULL, NULL, 1, 6, 't', 'f', 'About', '2010-09-17 16:23:20.853625')[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (1.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'about') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."name" = 'about') AND ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page')) AS subquery
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-17 16:23:20.859929', 'about', NULL, 1, 3, 'Page')[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 3) ORDER BY position ASC
+  [1m[36mSlug Load (3.4ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 3 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mSQL (6.1ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'about', "created_at" = '2010-09-17 16:23:20.853625', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 't', "depth" = NULL, "draft" = 'f', "lft" = 5, "link_url" = NULL, "menu_match" = NULL, "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = NULL, "path" = NULL, "position" = 1, "rgt" = 6, "show_in_menu" = 't', "skip_to_first_child" = 'f', "title" = 'About', "updated_at" = '2010-09-17 16:23:20.853625' WHERE ("pages"."id" = 3)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 3) ORDER BY "lft"[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>This is just a standard text page example. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin metus dolor, hendrerit sit amet, aliquet nec, posuere sed, purus. Nullam et velit iaculis odio sagittis placerat. Duis metus tellus, pellentesque ut, luctus id, egestas a, lorem. Praesent vitae mauris. Aliquam sed nulla. Sed id nunc vitae leo suscipit viverra. Proin at leo ut lacus consequat rhoncus. In hac habitasse platea dictumst. Nunc quis tortor sed libero hendrerit dapibus.
+
+Integer interdum purus id erat. Duis nec velit vitae dolor mattis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pellentesque dignissim lacus. Nulla semper euismod arcu. Suspendisse egestas, erat a consectetur dapibus, felis orci cursus eros, et sollicitudin purus urna et metus. Integer eget est sed nunc euismod vestibulum. Integer nulla dui, tristique in, euismod et, interdum imperdiet, enim. Mauris at lectus. Sed egestas tortor nec mi.</p>', '2010-09-17 16:23:20.919324', 3, 0, 'Body', '2010-09-17 16:23:20.919324')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla nisi a elit. Duis ultricies orci ut arcu. Ut ac nibh. Duis blandit rhoncus magna. Pellentesque semper risus ut magna. Etiam pulvinar tellus eget diam. Morbi blandit. Donec pulvinar mauris at ligula. Sed pellentesque, ipsum id congue molestie, lectus risus egestas pede, ac viverra diam lacus ac urna. Aenean elit.</p>', '2010-09-17 16:23:20.943168', 3, 1, 'Side Body', '2010-09-17 16:23:20.943168')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-17 16:23:20.979459', NULL, 'none', 'f', NULL, 'f', 7, '/contact', '^/(inquiries|contact).*$', NULL, NULL, NULL, NULL, 2, 8, 't', 'f', 'Contact', '2010-09-17 16:23:20.979459')[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (0.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'contact') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."name" = 'contact') AND ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page')) AS subquery
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-17 16:23:20.997367', 'contact', NULL, 1, 4, 'Page')[0m
+  [1m[35mPagePart Load (0.1ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 4) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 4 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'contact', "created_at" = '2010-09-17 16:23:20.979459', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = NULL, "draft" = 'f', "lft" = 7, "link_url" = '/contact', "menu_match" = '^/(inquiries|contact).*$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = NULL, "path" = NULL, "position" = 2, "rgt" = 8, "show_in_menu" = 't', "skip_to_first_child" = 'f', "title" = 'Contact', "updated_at" = '2010-09-17 16:23:20.979459' WHERE ("pages"."id" = 4)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 4) ORDER BY "lft"[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>Get in touch with us. Just use the form below and we''ll get back to you as soon as we can.</p>', '2010-09-17 16:23:21.020147', 4, 0, 'Body', '2010-09-17 16:23:21.020147')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>163 Evergreen Terrace<br/>Happyville<br/>USA.<br/>Phone: 1-800 CALLUSNOW</p>', '2010-09-17 16:23:21.033391', 4, 1, 'Side Body', '2010-09-17 16:23:21.033391')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-17 16:23:21.045637', NULL, 'none', 'f', NULL, 'f', 9, '/contact/thank_you', '^/(inquiries|contact)/thank_you$', NULL, NULL, 4, NULL, 0, 10, 'f', 'f', 'Thank You', '2010-09-17 16:23:21.045637')[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'thank-you') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."name" = 'thank-you') AND ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page')) AS subquery
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-17 16:23:21.055254', 'thank-you', NULL, 1, 5, 'Page')[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 5) ORDER BY position ASC
+  [1m[36mPage Load (1.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) ORDER BY "lft" LIMIT 1[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 5) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "pages" SET "lft" = CASE WHEN "lft" BETWEEN 8 AND 8 THEN "lft" + 10 - 8 WHEN "lft" BETWEEN 9 AND 10 THEN "lft" + 8 - 9 ELSE "lft" END, "rgt" = CASE WHEN "rgt" BETWEEN 8 AND 8 THEN "rgt" + 10 - 8 WHEN "rgt" BETWEEN 9 AND 10 THEN "rgt" + 8 - 9 ELSE "rgt" END, "parent_id" = CASE WHEN id = 5 THEN 4 ELSE "parent_id" END [0m
+  [1m[35mPage Load (50.9ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 5) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 5)) AS subquery
+  [1m[36mSlug Load (0.4ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 5 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mPage Load (1.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 5) LIMIT 1
+  [1m[36mPagePart Load (0.1ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 5) ORDER BY position ASC[0m
+  [1m[35mPagePart Load (0.1ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 5) ORDER BY position ASC
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "pages" SET "depth" = 1, "updated_at" = '2010-09-17 16:23:21.131097' WHERE ("pages"."id" = 5)[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'thank-you', "created_at" = '2010-09-17 16:23:21.045637', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = 1, "draft" = 'f', "lft" = 8, "link_url" = '/contact/thank_you', "menu_match" = '^/(inquiries|contact)/thank_you$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = 4, "path" = NULL, "position" = 0, "rgt" = 9, "show_in_menu" = 'f', "skip_to_first_child" = 'f', "title" = 'Thank You', "updated_at" = '2010-09-17 16:23:21.131097' WHERE ("pages"."id" = 5)
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 5) ORDER BY "lft"[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>We''ve received your inquiry and will get back to you with a response shortly.</p><p><a href=''/''>Return to the home page</a></p>', '2010-09-17 16:23:21.153437', 5, 0, 'Body', '2010-09-17 16:23:21.153437')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX("pages"."rgt") AS max_id FROM "pages"[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-17 16:23:21.186378', NULL, 'none', 't', NULL, 'f', 11, NULL, NULL, NULL, NULL, 4, NULL, 1, 12, 'f', 'f', 'Privacy Policy', '2010-09-17 16:23:21.186378')
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'privacy-policy') AND ("slugs"."scope" IS NULL) ORDER BY id DESC
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."name" = 'privacy-policy') AND ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page')) AS subquery[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-17 16:23:21.192187', 'privacy-policy', NULL, 1, 6, 'Page')
+  [1m[36mPagePart Load (0.2ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 6) ORDER BY position ASC[0m
+  [1m[35mPage Load (1.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) ORDER BY "lft" LIMIT 1
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 6) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "lft" = CASE WHEN "lft" BETWEEN 10 AND 10 THEN "lft" + 12 - 10 WHEN "lft" BETWEEN 11 AND 12 THEN "lft" + 10 - 11 ELSE "lft" END, "rgt" = CASE WHEN "rgt" BETWEEN 10 AND 10 THEN "rgt" + 12 - 10 WHEN "rgt" BETWEEN 11 AND 12 THEN "rgt" + 10 - 11 ELSE "rgt" END, "parent_id" = CASE WHEN id = 6 THEN 4 ELSE "parent_id" END 
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mPage Load (0.1ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 6)) AS subquery[0m
+  [1m[35mSlug Load (0.4ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 6 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1
+  [1m[36mPage Load (1.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 6) LIMIT 1[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 6) ORDER BY position ASC
+  [1m[36mPagePart Load (0.2ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 6) ORDER BY position ASC[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "depth" = 1, "updated_at" = '2010-09-17 16:23:21.253646' WHERE ("pages"."id" = 6)
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'privacy-policy', "created_at" = '2010-09-17 16:23:21.186378', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 't', "depth" = 1, "draft" = 'f', "lft" = 10, "link_url" = NULL, "menu_match" = NULL, "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = 4, "path" = NULL, "position" = 1, "rgt" = 11, "show_in_menu" = 'f', "skip_to_first_child" = 'f', "title" = 'Privacy Policy', "updated_at" = '2010-09-17 16:23:21.253646' WHERE ("pages"."id" = 6)[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 6) ORDER BY "lft"
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>We respect your privacy. We do not market, rent or sell our email list to any outside parties.</p><p>We need your e-mail address so that we can ensure that the people using our forms are bona fide. It also allows us to send you e-mail newsletters and other communications, if you opt-in. Your postal address is required in order to send you information and pricing, if you request it.</p><p>Please call us at 123 456 7890 if you have any questions or concerns.</p>', '2010-09-17 16:23:21.278098', 6, 0, 'Body', '2010-09-17 16:23:21.278098')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:21.313383', 'f', 'site_name', 'f', NULL, '2010-09-17 16:23:21.313383', 'Company Name')
+  [1m[36mRefinerySetting Load (0.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:21.324246', 'f', 'new_page_parts', 'f', NULL, '2010-09-17 16:23:21.324246', 'false')
+  [1m[36mRefinerySetting Load (1.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:21.338303', 'f', 'activity_show_limit', 'f', NULL, '2010-09-17 16:23:21.338303', 7)
+  [1m[36mRefinerySetting Load (1.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:21.350902', 'f', 'preferred_image_view', 'f', NULL, '2010-09-17 16:23:21.350902', 'grid')
+  [1m[36mRefinerySetting Load (2.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:21.366686', 'f', 'analytics_page_code', 'f', NULL, '2010-09-17 16:23:21.366686', 'UA-xxxxxx-x')
+  [1m[36mRefinerySetting Load (2.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-17 16:23:21.380987', 'f', 'image_thumbnails', 'f', NULL, '2010-09-17 16:23:21.380987', '--- 
+:small: 110x110>
+:medium: 225x255>
+:large: 450x450>
+')
+  [1m[36mRefinerySetting Load (2.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
