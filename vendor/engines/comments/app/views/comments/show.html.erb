@@ -1,0 +1,25 @@
+<% content_for :body_content_title do %>
+  <%= @comment %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Comment</h3>
+    <%=raw @comment.comment %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="comments">
+    <% @comments.each do |comment| %>
+      <li>
+        <%= link_to comment, comment_url(comment) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

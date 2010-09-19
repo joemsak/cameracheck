@@ -1,0 +1,19 @@
+nl:
+  plugins:
+    venues:
+      title: Venues
+  admin:
+    venues:
+      index:
+        create_new: Maak een nieuwe Venue
+        reorder: Wijzig de volgorde van de Venues
+        reorder_done: Klaar met het wijzingen van de volgorde van de Venues
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Venues. Druk op 'Maak een nieuwe Venue' om de eerste aan te maken.
+      venue:
+        view_live: Bekijk deze venue op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze venue
+        delete: Verwijder deze venue voor eeuwig
+  venues:
+    show:
+      other: Andere Venues

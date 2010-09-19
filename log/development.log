@@ -1337,3 +1337,1951 @@ Rendered /Users/joe/.rvm/gems/ruby-1.9.2-head@rails3/gems/refinerycms-0.9.8.4/ve
 Rendered /Users/joe/.rvm/gems/ruby-1.9.2-head@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (90.5ms)
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
 Completed 200 OK in 496ms (Views: 122.4ms | ActiveRecord: 12.7ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (3.8ms)[0m  [1mDROP TABLE "images"[0m
+  [1m[35mSQL (2.9ms)[0m  CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_mime_type" varchar(255), "image_name" varchar(255), "image_size" integer, "image_width" integer, "image_height" integer, "created_at" datetime, "updated_at" datetime, "image_uid" varchar(255), "image_ext" varchar(255)) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.4ms)[0m  DROP TABLE "inquiries"
+  [1m[36mSQL (2.5ms)[0m  [1mCREATE TABLE "inquiries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "phone" varchar(255), "message" text, "position" integer, "open" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime, "spam" boolean DEFAULT 'f') [0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.6ms)[0m  [1mDROP TABLE "inquiry_settings"[0m
+  [1m[35mSQL (3.9ms)[0m  CREATE TABLE "inquiry_settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "value" text, "destroyable" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  DROP TABLE "page_parts"
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE TABLE "page_parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "page_id" integer, "title" varchar(255), "body" text, "position" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("page_parts")
+  [1m[36mSQL (2.5ms)[0m  [1mCREATE INDEX "index_page_parts_on_id" ON "page_parts" ("id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("page_parts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_page_parts_on_id')[0m
+  [1m[35mSQL (2.9ms)[0m  CREATE INDEX "index_page_parts_on_page_id" ON "page_parts" ("page_id")
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (10.3ms)[0m  DROP TABLE "pages"
+  [1m[36mSQL (4.5ms)[0m  [1mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "parent_id" integer, "position" integer, "path" varchar(255), "created_at" datetime, "updated_at" datetime, "meta_keywords" varchar(255), "meta_description" text, "show_in_menu" boolean DEFAULT 't', "link_url" varchar(255), "menu_match" varchar(255), "deletable" boolean DEFAULT 't', "custom_title" varchar(255), "custom_title_type" varchar(255) DEFAULT 'none', "draft" boolean DEFAULT 'f', "browser_title" varchar(255), "skip_to_first_child" boolean DEFAULT 'f', "lft" integer, "rgt" integer, "depth" integer, "cached_slug" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("pages")
+  [1m[36mSQL (3.0ms)[0m  [1mCREATE INDEX "index_pages_on_depth" ON "pages" ("depth")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("pages")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_depth')[0m
+  [1m[35mSQL (4.4ms)[0m  CREATE INDEX "index_pages_on_id" ON "pages" ("id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("pages")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_depth')[0m
+  [1m[35mSQL (2.6ms)[0m  CREATE INDEX "index_pages_on_lft" ON "pages" ("lft")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("pages")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_lft')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_depth')
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE INDEX "index_pages_on_parent_id" ON "pages" ("parent_id")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("pages")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_parent_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_lft')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_depth')
+  [1m[36mSQL (2.9ms)[0m  [1mCREATE INDEX "index_pages_on_rgt" ON "pages" ("rgt")[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (6.9ms)[0m  [1mDROP TABLE "refinery_settings"[0m
+  [1m[35mSQL (8.7ms)[0m  CREATE TABLE "refinery_settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "value" text, "destroyable" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime, "scoping" varchar(255), "restricted" boolean DEFAULT 'f', "callback_proc_as_string" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("refinery_settings")[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE INDEX "index_refinery_settings_on_name" ON "refinery_settings" ("name")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.6ms)[0m  DROP TABLE "resources"
+  [1m[36mSQL (2.5ms)[0m  [1mCREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "file_mime_type" varchar(255), "file_name" varchar(255), "file_size" integer, "created_at" datetime, "updated_at" datetime, "file_uid" varchar(255), "file_ext" varchar(255)) [0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (3.1ms)[0m  [1mDROP TABLE "roles"[0m
+  [1m[35mSQL (3.4ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255)) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.5ms)[0m  DROP TABLE "roles_users"
+  [1m[36mSQL (2.4ms)[0m  [1mCREATE TABLE "roles_users" ("user_id" integer, "role_id" integer) [0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.8ms)[0m  [1mDROP TABLE "slugs"[0m
+  [1m[35mSQL (3.2ms)[0m  CREATE TABLE "slugs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "sluggable_id" integer, "sequence" integer DEFAULT 1 NOT NULL, "sluggable_type" varchar(40), "scope" varchar(40), "created_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("slugs")[0m
+  [1m[35mSQL (5.2ms)[0m  CREATE UNIQUE INDEX "index_slugs_on_name_and_sluggable_type_and_scope_and_sequence" ON "slugs" ("name", "sluggable_type", "scope", "sequence")
+  [1m[36mSQL (0.3ms)[0m  [1mPRAGMA index_list("slugs")[0m
+  [1m[35mSQL (0.4ms)[0m  PRAGMA index_info('index_slugs_on_name_and_sluggable_type_and_scope_and_sequence')
+  [1m[36mSQL (4.5ms)[0m  [1mCREATE INDEX "index_slugs_on_sluggable_id" ON "slugs" ("sluggable_id")[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.1ms)[0m  [1mDROP TABLE "user_plugins"[0m
+  [1m[35mSQL (2.4ms)[0m  CREATE TABLE "user_plugins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar(255), "position" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("user_plugins")[0m
+  [1m[35mSQL (3.0ms)[0m  CREATE INDEX "index_user_plugins_on_title" ON "user_plugins" ("name")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("user_plugins")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_user_plugins_on_title')
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE UNIQUE INDEX "index_unique_user_plugins" ON "user_plugins" ("user_id", "name")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (8.6ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (2.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime, "perishable_token" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (5.4ms)[0m  CREATE INDEX "index_users_on_id" ON "users" ("id")
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.8ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "inquiry_settings" ("created_at", "destroyable", "name", "updated_at", "value") VALUES ('2010-09-19 19:49:01.690661', 'f', 'Confirmation Body', '2010-09-19 19:49:01.690661', 'Thank you for your inquiry %name%,
+
+This email is a receipt to confirm we have received your inquiry and we''ll be in touch shortly.
+
+Thanks.')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "inquiry_settings" ("created_at", "destroyable", "name", "updated_at", "value") VALUES ('2010-09-19 19:49:01.703290', 'f', 'Notification Recipients', '2010-09-19 19:49:01.703290', '')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT MAX("pages"."rgt") AS max_id FROM "pages"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-19 19:49:02.060440', NULL, 'none', 'f', NULL, 'f', 1, '/', '^/$', NULL, NULL, NULL, NULL, 0, 2, 't', 'f', 'Home', '2010-09-19 19:49:02.060440')
+  [1m[36mSlug Load (0.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'home') AND ("slugs"."scope" IS NULL) ORDER BY id DESC
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page') AND ("slugs"."name" = 'home')) AS subquery[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:49:02.088874', 'home', NULL, 1, 1, 'Page')
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'home', "created_at" = '2010-09-19 19:49:02.060440', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = NULL, "draft" = 'f', "lft" = 1, "link_url" = '/', "menu_match" = '^/$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = NULL, "path" = NULL, "position" = 0, "rgt" = 2, "show_in_menu" = 't', "skip_to_first_child" = 'f', "title" = 'Home', "updated_at" = '2010-09-19 19:49:02.060440' WHERE ("pages"."id" = 1)[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 1) ORDER BY "lft"
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>Welcome to our site. This is just a place holder page while we gather our content.</p>', '2010-09-19 19:49:02.272391', 1, 0, 'Body', '2010-09-19 19:49:02.272391')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>This is another block of content over here.</p>', '2010-09-19 19:49:02.280052', 1, 1, 'Side Body', '2010-09-19 19:49:02.280052')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX("pages"."rgt") AS max_id FROM "pages"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-19 19:49:02.290056', NULL, 'none', 'f', NULL, 'f', 3, NULL, '^/404$', NULL, NULL, 1, NULL, 0, 4, 'f', 'f', 'Page not found', '2010-09-19 19:49:02.290056')
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'page-not-found') AND ("slugs"."scope" IS NULL) ORDER BY id DESC
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page') AND ("slugs"."name" = 'page-not-found')) AS subquery[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:49:02.298701', 'page-not-found', NULL, 1, 2, 'Page')
+  [1m[36mPagePart Load (0.1ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 2) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) ORDER BY "lft" LIMIT 1
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "lft" = CASE WHEN "lft" BETWEEN 2 AND 2 THEN "lft" + 4 - 2 WHEN "lft" BETWEEN 3 AND 4 THEN "lft" + 2 - 3 ELSE "lft" END, "rgt" = CASE WHEN "rgt" BETWEEN 2 AND 2 THEN "rgt" + 4 - 2 WHEN "rgt" BETWEEN 3 AND 4 THEN "rgt" + 2 - 3 ELSE "rgt" END, "parent_id" = CASE WHEN id = 2 THEN 1 ELSE "parent_id" END 
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.1ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "pages" WHERE ("pages"."lft" <= 2 AND "pages"."rgt" >= 3) AND ("pages".id != 2)) AS subquery[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 2 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 2) LIMIT 1[0m
+  [1m[35mPagePart Load (0.1ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 2) ORDER BY position ASC
+  [1m[36mPagePart Load (0.2ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 2) ORDER BY position ASC[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "pages" SET "depth" = 1, "updated_at" = '2010-09-19 19:49:02.331654' WHERE ("pages"."id" = 2)
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'page-not-found', "created_at" = '2010-09-19 19:49:02.290056', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = 1, "draft" = 'f', "lft" = 2, "link_url" = NULL, "menu_match" = '^/404$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = 1, "path" = NULL, "position" = 0, "rgt" = 3, "show_in_menu" = 'f', "skip_to_first_child" = 'f', "title" = 'Page not found', "updated_at" = '2010-09-19 19:49:02.331654' WHERE ("pages"."id" = 2)[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 2) ORDER BY "lft"
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<h2>Sorry, there was a problem...</h2><p>The page you requested was not found.</p><p><a href=''/''>Return to the home page</a></p>', '2010-09-19 19:49:02.344046', 2, 0, 'Body', '2010-09-19 19:49:02.344046')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-19 19:49:02.353361', NULL, 'none', 't', NULL, 'f', 5, NULL, NULL, NULL, NULL, NULL, NULL, 1, 6, 't', 'f', 'About', '2010-09-19 19:49:02.353361')[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'about') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page') AND ("slugs"."name" = 'about')) AS subquery
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:49:02.362783', 'about', NULL, 1, 3, 'Page')[0m
+  [1m[35mPagePart Load (0.1ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 3) ORDER BY position ASC
+  [1m[36mSlug Load (0.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 3 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'about', "created_at" = '2010-09-19 19:49:02.353361', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 't', "depth" = NULL, "draft" = 'f', "lft" = 5, "link_url" = NULL, "menu_match" = NULL, "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = NULL, "path" = NULL, "position" = 1, "rgt" = 6, "show_in_menu" = 't', "skip_to_first_child" = 'f', "title" = 'About', "updated_at" = '2010-09-19 19:49:02.353361' WHERE ("pages"."id" = 3)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 3) ORDER BY "lft"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>This is just a standard text page example. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin metus dolor, hendrerit sit amet, aliquet nec, posuere sed, purus. Nullam et velit iaculis odio sagittis placerat. Duis metus tellus, pellentesque ut, luctus id, egestas a, lorem. Praesent vitae mauris. Aliquam sed nulla. Sed id nunc vitae leo suscipit viverra. Proin at leo ut lacus consequat rhoncus. In hac habitasse platea dictumst. Nunc quis tortor sed libero hendrerit dapibus.
+
+Integer interdum purus id erat. Duis nec velit vitae dolor mattis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pellentesque dignissim lacus. Nulla semper euismod arcu. Suspendisse egestas, erat a consectetur dapibus, felis orci cursus eros, et sollicitudin purus urna et metus. Integer eget est sed nunc euismod vestibulum. Integer nulla dui, tristique in, euismod et, interdum imperdiet, enim. Mauris at lectus. Sed egestas tortor nec mi.</p>', '2010-09-19 19:49:02.381804', 3, 0, 'Body', '2010-09-19 19:49:02.381804')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla nisi a elit. Duis ultricies orci ut arcu. Ut ac nibh. Duis blandit rhoncus magna. Pellentesque semper risus ut magna. Etiam pulvinar tellus eget diam. Morbi blandit. Donec pulvinar mauris at ligula. Sed pellentesque, ipsum id congue molestie, lectus risus egestas pede, ac viverra diam lacus ac urna. Aenean elit.</p>', '2010-09-19 19:49:02.387275', 3, 1, 'Side Body', '2010-09-19 19:49:02.387275')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-19 19:49:02.396048', NULL, 'none', 'f', NULL, 'f', 7, '/contact', '^/(inquiries|contact).*$', NULL, NULL, NULL, NULL, 2, 8, 't', 'f', 'Contact', '2010-09-19 19:49:02.396048')[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'contact') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page') AND ("slugs"."name" = 'contact')) AS subquery
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:49:02.405056', 'contact', NULL, 1, 4, 'Page')[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 4) ORDER BY position ASC
+  [1m[36mSlug Load (0.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 4 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'contact', "created_at" = '2010-09-19 19:49:02.396048', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = NULL, "draft" = 'f', "lft" = 7, "link_url" = '/contact', "menu_match" = '^/(inquiries|contact).*$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = NULL, "path" = NULL, "position" = 2, "rgt" = 8, "show_in_menu" = 't', "skip_to_first_child" = 'f', "title" = 'Contact', "updated_at" = '2010-09-19 19:49:02.396048' WHERE ("pages"."id" = 4)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 4) ORDER BY "lft"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>Get in touch with us. Just use the form below and we''ll get back to you as soon as we can.</p>', '2010-09-19 19:49:02.425037', 4, 0, 'Body', '2010-09-19 19:49:02.425037')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>163 Evergreen Terrace<br/>Happyville<br/>USA.<br/>Phone: 1-800 CALLUSNOW</p>', '2010-09-19 19:49:02.431021', 4, 1, 'Side Body', '2010-09-19 19:49:02.431021')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-19 19:49:02.440006', NULL, 'none', 'f', NULL, 'f', 9, '/contact/thank_you', '^/(inquiries|contact)/thank_you$', NULL, NULL, 4, NULL, 0, 10, 'f', 'f', 'Thank You', '2010-09-19 19:49:02.440006')[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'thank-you') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page') AND ("slugs"."name" = 'thank-you')) AS subquery
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:49:02.448231', 'thank-you', NULL, 1, 5, 'Page')[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 5) ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) ORDER BY "lft" LIMIT 1[0m
+  [1m[35mPage Load (0.1ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 5) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "pages" SET "lft" = CASE WHEN "lft" BETWEEN 8 AND 8 THEN "lft" + 10 - 8 WHEN "lft" BETWEEN 9 AND 10 THEN "lft" + 8 - 9 ELSE "lft" END, "rgt" = CASE WHEN "rgt" BETWEEN 8 AND 8 THEN "rgt" + 10 - 8 WHEN "rgt" BETWEEN 9 AND 10 THEN "rgt" + 8 - 9 ELSE "rgt" END, "parent_id" = CASE WHEN id = 5 THEN 4 ELSE "parent_id" END [0m
+  [1m[35mPage Load (0.1ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 5) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 5)) AS subquery
+  [1m[36mSlug Load (0.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 5 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 5) LIMIT 1
+  [1m[36mPagePart Load (0.1ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 5) ORDER BY position ASC[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 5) ORDER BY position ASC
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "pages" SET "depth" = 1, "updated_at" = '2010-09-19 19:49:02.480516' WHERE ("pages"."id" = 5)[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'thank-you', "created_at" = '2010-09-19 19:49:02.440006', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = 1, "draft" = 'f', "lft" = 8, "link_url" = '/contact/thank_you', "menu_match" = '^/(inquiries|contact)/thank_you$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = 4, "path" = NULL, "position" = 0, "rgt" = 9, "show_in_menu" = 'f', "skip_to_first_child" = 'f', "title" = 'Thank You', "updated_at" = '2010-09-19 19:49:02.480516' WHERE ("pages"."id" = 5)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 5) ORDER BY "lft"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>We''ve received your inquiry and will get back to you with a response shortly.</p><p><a href=''/''>Return to the home page</a></p>', '2010-09-19 19:49:02.495131', 5, 0, 'Body', '2010-09-19 19:49:02.495131')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT MAX("pages"."rgt") AS max_id FROM "pages"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-19 19:49:02.505596', NULL, 'none', 't', NULL, 'f', 11, NULL, NULL, NULL, NULL, 4, NULL, 1, 12, 'f', 'f', 'Privacy Policy', '2010-09-19 19:49:02.505596')
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC[0m
+  [1m[35mSlug Load (0.1ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'privacy-policy') AND ("slugs"."scope" IS NULL) ORDER BY id DESC
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page') AND ("slugs"."name" = 'privacy-policy')) AS subquery[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:49:02.514760', 'privacy-policy', NULL, 1, 6, 'Page')
+  [1m[36mPagePart Load (0.1ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 6) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) ORDER BY "lft" LIMIT 1
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 6) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "pages" SET "lft" = CASE WHEN "lft" BETWEEN 10 AND 10 THEN "lft" + 12 - 10 WHEN "lft" BETWEEN 11 AND 12 THEN "lft" + 10 - 11 ELSE "lft" END, "rgt" = CASE WHEN "rgt" BETWEEN 10 AND 10 THEN "rgt" + 12 - 10 WHEN "rgt" BETWEEN 11 AND 12 THEN "rgt" + 10 - 11 ELSE "rgt" END, "parent_id" = CASE WHEN id = 6 THEN 4 ELSE "parent_id" END 
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mPage Load (0.1ms)[0m  SELECT "lft", "rgt", "parent_id" FROM "pages" WHERE ("pages"."id" = 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 6)) AS subquery[0m
+  [1m[35mSlug Load (0.4ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 6 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 6) LIMIT 1[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 6) ORDER BY position ASC
+  [1m[36mPagePart Load (0.2ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 6) ORDER BY position ASC[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "pages" SET "depth" = 1, "updated_at" = '2010-09-19 19:49:02.553614' WHERE ("pages"."id" = 6)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'privacy-policy', "created_at" = '2010-09-19 19:49:02.505596', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 't', "depth" = 1, "draft" = 'f', "lft" = 10, "link_url" = NULL, "menu_match" = NULL, "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = 4, "path" = NULL, "position" = 1, "rgt" = 11, "show_in_menu" = 'f', "skip_to_first_child" = 'f', "title" = 'Privacy Policy', "updated_at" = '2010-09-19 19:49:02.553614' WHERE ("pages"."id" = 6)[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 6) ORDER BY "lft"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES ('<p>We respect your privacy. We do not market, rent or sell our email list to any outside parties.</p><p>We need your e-mail address so that we can ensure that the people using our forms are bona fide. It also allows us to send you e-mail newsletters and other communications, if you opt-in. Your postal address is required in order to send you information and pricing, if you request it.</p><p>Please call us at 123 456 7890 if you have any questions or concerns.</p>', '2010-09-19 19:49:02.567157', 6, 0, 'Body', '2010-09-19 19:49:02.567157')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:02.576316', 'f', 'site_name', 'f', NULL, '2010-09-19 19:49:02.576316', 'Company Name')
+  [1m[36mRefinerySetting Load (0.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:02.704463', 'f', 'new_page_parts', 'f', NULL, '2010-09-19 19:49:02.704463', 'false')
+  [1m[36mRefinerySetting Load (0.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:02.718486', 'f', 'activity_show_limit', 'f', NULL, '2010-09-19 19:49:02.718486', 7)
+  [1m[36mRefinerySetting Load (0.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:02.732578', 'f', 'preferred_image_view', 'f', NULL, '2010-09-19 19:49:02.732578', 'grid')
+  [1m[36mRefinerySetting Load (0.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:02.746225', 'f', 'analytics_page_code', 'f', NULL, '2010-09-19 19:49:02.746225', 'UA-xxxxxx-x')
+  [1m[36mRefinerySetting Load (1.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:02.761158', 'f', 'image_thumbnails', 'f', NULL, '2010-09-19 19:49:02.761158', '--- 
+:small: 110x110>
+:medium: 225x255>
+:large: 450x450>
+')
+  [1m[36mRefinerySetting Load (0.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'dragonfly_secret') AND ("refinery_settings"."scoping" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:30.261720', 't', 'dragonfly_secret', 'f', NULL, '2010-09-19 19:49:30.261720', '5a9ca40f038bf3a3db1ca21b61c21e474bd9a3e54ea055b9')
+  [1m[36mRefinerySetting Load (0.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (0.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mRefinerySetting Load (0.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'i18n_translation_default_locale') AND ("refinery_settings"."scoping" = 'refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES ('::Refinery::I18n.setup!', '2010-09-19 19:49:31.395168', 't', 'i18n_translation_default_locale', 'f', 'refinery', '2010-09-19 19:49:31.395168', 'en')[0m
+  [1m[35mRefinerySetting Load (0.5ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/" for 127.0.0.1 at Sun Sep 19 14:49:39 -0500 2010
+  [1m[36mRefinerySetting Load (1.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mRefinerySetting Load (0.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'i18n_translation_enabled') AND ("refinery_settings"."scoping" = 'refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES ('::Refinery::I18n.setup!', '2010-09-19 19:49:39.630208', 't', 'i18n_translation_enabled', 'f', 'refinery', '2010-09-19 19:49:39.630208', 'true')[0m
+  [1m[35mRefinerySetting Load (0.5ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'i18n_translation_locales') AND ("refinery_settings"."scoping" = 'refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES ('::Refinery::I18n.setup!', '2010-09-19 19:49:39.646180', 't', 'i18n_translation_locales', 'f', 'refinery', '2010-09-19 19:49:39.646180', '--- 
+:de: Deutsch
+:da: Dansk
+:nb: "Norsk Bokm\xC3\xA5l"
+:lv: Latviski
+:en: English
+:sl: Slovenian
+:ru: !binary |
+ 0KDRg9GB0YHQutC40Lk=
+
+:"zh-CN": Simple Chinese
+:es: "Espa\xC3\xB1ol"
+:"pt-BR": "Portugu\xC3\xAAs"
+:it: Italiano
+:nl: Nederlands
+:fr: "Fran\xC3\xA7ais"
+')
+  [1m[36mRefinerySetting Load (0.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mRefinerySetting Load (0.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'i18n_translation_default_frontend_locale') AND ("refinery_settings"."scoping" = 'refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES ('::Refinery::I18n.setup!', '2010-09-19 19:49:39.667620', 't', 'i18n_translation_default_frontend_locale', 'f', 'refinery', '2010-09-19 19:49:39.667620', 'en')[0m
+  [1m[35mRefinerySetting Load (0.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles"."id" FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("title") VALUES ('Refinery')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mRefinerySetting Load (0.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'use_resource_caching') AND ("refinery_settings"."scoping" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:39.927932', 't', 'use_resource_caching', 'f', NULL, '2010-09-19 19:49:39.927932', 'true')
+  [1m[36mRefinerySetting Load (0.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mRefinerySetting Load (0.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'use_google_ajax_libraries') AND ("refinery_settings"."scoping" IS NULL) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:39.950611', 't', 'use_google_ajax_libraries', 'f', NULL, '2010-09-19 19:49:39.950611', 'false')[0m
+  [1m[35mRefinerySetting Load (0.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (46.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/welcome.html.erb within layouts/login (77.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed 200 OK in 206ms (Views: 148.3ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Sun Sep 19 14:49:43 -0500 2010
+  Processing by UsersController#new as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_error_messages.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_form_actions.html.erb (2.4ms)
+  [1m[35mRefinerySetting Load (0.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (117.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/authentication/app/views/users/new.html.erb within layouts/login (186.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed 200 OK in 294ms (Views: 215.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at Sun Sep 19 14:49:52 -0500 2010
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Sign up", "continue_editing"=>"false", "modal"=>"false", "authenticity_token"=>"7TjAzmVtOtCpQj03UoH9oBXE9vvBR/d+u14sOM3j5nY=", "utf8"=>"✓", "locale"=>:en, "user"=>{"plugins"=>["refinery_dashboard", "refinery_files", "refinery_images", "refinery_inquiries", "refinery_pages", "refinery_settings", "refinery_users"], "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"admin", "email"=>"joe@joesak.com"}, "dialog"=>"false"}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('joe@joesak.com')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('admin')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '53b8717011532372b480a44dcdaed3ff2b4b1c66080e8b901174fa81d49064b6dd35617a5bddb723bf84226e48f04b09516101652cdef6dea8f4f0a810c2101a') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('joe@joesak.com')) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('admin')) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '53b8717011532372b480a44dcdaed3ff2b4b1c66080e8b901174fa81d49064b6dd35617a5bddb723bf84226e48f04b09516101652cdef6dea8f4f0a810c2101a') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "crypted_password", "email", "login", "password_salt", "perishable_token", "persistence_token", "updated_at") VALUES ('2010-09-19 19:49:52.627273', '79192fcc3fc15e190eb576860ab5d3f7d07a15e2', 'joe@joesak.com', 'admin', 'T3GMoRo2t2f4tblpnp', 'kYFYmJMk6j3h7u2xNB3w', '53b8717011532372b480a44dcdaed3ff2b4b1c66080e8b901174fa81d49064b6dd35617a5bddb723bf84226e48f04b09516101652cdef6dea8f4f0a810c2101a', '2010-09-19 19:49:52.627273')[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'User') ORDER BY id DESC
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'User') AND ("slugs"."name" = 'admin') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."sluggable_type" = 'User') AND ("slugs"."name" = 'admin') AND ("slugs"."scope" IS NULL)) AS subquery
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:49:52.640554', 'admin', NULL, 1, 1, 'User')[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (1, 1)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('refinery_dashboard', 0, 1)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('refinery_files', 1, 1)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('refinery_images', 2, 1)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('refinery_inquiries', 3, 1)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('refinery_pages', 4, 1)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('refinery_settings', 5, 1)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('refinery_users', 6, 1)[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "perishable_token" = 'bgr13ZvbF7ARZQWZXt', "updated_at" = '2010-09-19 19:49:52.717555' WHERE ("users"."id" = 1)[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from service at /Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/httpserver.rb:104)
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "perishable_token" = 'VEexmSu3ofIDz7zMYH', "updated_at" = '2010-09-19 19:49:52.726531' WHERE ("users"."id" = 1)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles"."id" FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("title") VALUES ('Superuser')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles_users" ("role_id", "user_id") VALUES (2, 1)[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "perishable_token" = '6Tg9FXADlplXkbfn43rS', "updated_at" = '2010-09-19 19:49:52.750754' WHERE ("users"."id" = 1)
+  [1m[36mRefinerySetting Load (0.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'site_name') LIMIT 1[0m
+Redirected to http://localhost:3001/refinery
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Completed 302 Found in 569ms
+
+
+Started GET "/refinery" for 127.0.0.1 at Sun Sep 19 14:49:52 -0500 2010
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (1.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'i18n_translation_current_locale') AND ("refinery_settings"."scoping" = 'refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES ('::Refinery::I18n.setup!', '2010-09-19 19:49:53.052756', 't', 'i18n_translation_current_locale', 'f', 'refinery', '2010-09-19 19:49:53.052756', 'en')
+  [1m[36mRefinerySetting Load (0.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.5ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mResource Load (0.3ms)[0m  SELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mInquirySetting Load (0.3ms)[0m  SELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (14.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (11.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (6.4ms)
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."name" = 'refinery_enable_backend_reordering') AND ("refinery_settings"."scoping" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:49:53.555706', 't', 'refinery_enable_backend_reordering', 'f', NULL, '2010-09-19 19:49:53.555706', 'true')
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (26.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (1.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (149.0ms)
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 582ms (Views: 296.8ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/refinery/settings/1/edit?app_dialog=true&dialog=true" for 127.0.0.1 at Sun Sep 19 14:49:58 -0500 2010
+  Processing by Admin::RefinerySettingsController#edit as HTML
+  Parameters: {"id"=>"1", "app_dialog"=>"true", "locale"=>:en, "dialog"=>"true"}
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 1) LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.4ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 1) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_error_messages.html.erb (1.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_form_actions.html.erb (2.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_form.html.erb (42.7ms)
+  [1m[35mRefinerySetting Load (0.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (18.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/edit.html.erb within layouts/admin_dialog (92.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 379ms (Views: 136.8ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/refinery/settings/1" for 127.0.0.1 at Sun Sep 19 14:50:04 -0500 2010
+  Processing by Admin::RefinerySettingsController#update as HTML
+  Parameters: {"commit"=>"Save", "continue_editing"=>"false", "modal"=>"true", "authenticity_token"=>"7TjAzmVtOtCpQj03UoH9oBXE9vvBR/d+u14sOM3j5nY=", "utf8"=>"✓", "id"=>"1", "locale"=>:en, "refinery_setting"=>{"restricted"=>"0", "value"=>"Camera Check"}, "dialog"=>"true"}
+  [1m[35mRefinerySetting Load (0.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 1) LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.4ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "refinery_settings" SET "callback_proc_as_string" = NULL, "updated_at" = '2010-09-19 19:50:05.408266', "value" = 'Camera Check' WHERE ("refinery_settings"."id" = 1)
+  [1m[36mRefinerySetting Load (0.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered text template (0.0ms)
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 263ms (Views: 2.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/refinery" for 127.0.0.1 at Sun Sep 19 14:50:05 -0500 2010
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (1.6ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mResource Load (0.3ms)[0m  [1mSELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mInquirySetting Load (0.3ms)[0m  [1mSELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mPage Load (0.8ms)[0m  SELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (10.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (10.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (5.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (1.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (118.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 449ms (Views: 181.6ms | ActiveRecord: 6.5ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to AddMissingIndexes (20091109012126)
+Migrating to AddDownForMaintenancePage (20091130040711)
+Migrating to AddSuperuserToUsers (20091207033335)
+Migrating to AddThemesTable (20100114092849)
+Migrating to RenameTitleToNameOnUserPlugins (20100125003944)
+Migrating to MigrateOldPluginTitlesToPluginNamesForUsers (20100125033146)
+Migrating to AddResetCodeToUsers (20100127004649)
+Migrating to RemoveCustomTitleImageIdAndImageIdFromPages (20100202034802)
+Migrating to ChangePartTitlesToTitleizedVersionForNewFormat (20100204011654)
+Migrating to RemoveThemesTable (20100223211536)
+Migrating to ChangeUsersColumnsForAuthlogic (20100305023036)
+Migrating to RemoveUnusedUsersColumns (20100305023037)
+Migrating to MakeUserPerishableTokenNullable (20100312155331)
+Migrating to MakeUserPersistenceTokenNullable (20100312160327)
+Migrating to RemoveStateFromUsers (20100315203301)
+Migrating to ChangeImageGridThumbnailSizeAndRegenerate (20100419001048)
+Migrating to RenamePermissionsForResourcesPluginToFiles (20100522020225)
+Migrating to RemoveTakeDownForMaintenancePage (20100525084518)
+Migrating to AddSmallAndLargeThumbnailSizes (20100525110237)
+Migrating to UpdateLinkUrlOnPagesFromInquiriesNewToContact (20100530205942)
+Migrating to ConvertResourceToDragonfly (20100605132138)
+Migrating to ConvertImageToDragonfly (20100605132208)
+Migrating to ChangeThumbnailSizesForDragonfly (20100606135207)
+Migrating to AddScopingToRefinerySettings (20100608062447)
+Migrating to AddRestrictedToRefinerySettings (20100623220402)
+Migrating to AddRoles (20100624024501)
+Migrating to AddCallbackProcAsStringToRefinerySettings (20100629081543)
+Migrating to RemoveSuperuserFromUsers (20100701053151)
+Migrating to AddSpamToInquiries (20100702022630)
+Migrating to EnsureUserPluginsUseNameAndNotTitle (20100708014636)
+Migrating to RemovePageTranslationsIfPresent (20100729221735)
+Migrating to MoveInquirySettingsToRefinerySettings (20100826232810)
+Migrating to MovePageToNestedSet (20100831122919)
+Migrating to AddCachedSlugToPages (20100913234704)
+Migrating to CreateVenues (20100919195107)
+  [1m[36mSQL (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.6ms)[0m  CREATE TABLE "venues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" varchar(255), "camera_rules" text, "position" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("venues")[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE INDEX "index_venues_on_id" ON "venues" ("id")
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("user_plugins"."position") AS max_id FROM "user_plugins" WHERE ("user_plugins".user_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_plugins" ("name", "position", "user_id") VALUES ('venues', 7, 1)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("pages"."position") AS max_id FROM "pages" WHERE ("pages"."parent_id" IS NULL)
+  [1m[36mRefinerySetting Load (0.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."scoping" = 'pages') AND ("refinery_settings"."name" = 'use_marketable_urls') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:51:30.091847', 't', 'use_marketable_urls', 'f', 'pages', '2010-09-19 19:51:30.091847', 'true')
+  [1m[36mRefinerySetting Load (0.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("pages"."rgt") AS max_id FROM "pages"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pages" ("browser_title", "cached_slug", "created_at", "custom_title", "custom_title_type", "deletable", "depth", "draft", "lft", "link_url", "menu_match", "meta_description", "meta_keywords", "parent_id", "path", "position", "rgt", "show_in_menu", "skip_to_first_child", "title", "updated_at") VALUES (NULL, NULL, '2010-09-19 19:51:30.112522', NULL, 'none', 'f', NULL, 'f', 13, '/venues', '^/venues(/|/.+?|)$', NULL, NULL, NULL, NULL, 3, 14, 't', 'f', 'Venues', '2010-09-19 19:51:30.112522')[0m
+  [1m[35mSlug Load (0.2ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') ORDER BY id DESC
+  [1m[36mSlug Load (0.1ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = NULL AND "slugs".sluggable_type = 'Page') AND ("slugs"."name" = 'venues-page') AND ("slugs"."scope" IS NULL) ORDER BY id DESC[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "slugs" WHERE ("slugs"."scope" IS NULL) AND ("slugs"."sluggable_type" = 'Page') AND ("slugs"."name" = 'venues-page')) AS subquery
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "slugs" ("created_at", "name", "scope", "sequence", "sluggable_id", "sluggable_type") VALUES ('2010-09-19 19:51:30.125618', 'venues-page', NULL, 1, 7, 'Page')[0m
+  [1m[35mPagePart Load (0.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+  [1m[36mSlug Load (0.2ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 7 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "pages" SET "browser_title" = NULL, "cached_slug" = 'venues-page', "created_at" = '2010-09-19 19:51:30.112522', "custom_title" = NULL, "custom_title_type" = 'none', "deletable" = 'f', "depth" = NULL, "draft" = 'f', "lft" = 13, "link_url" = '/venues', "menu_match" = '^/venues(/|/.+?|)$', "meta_description" = NULL, "meta_keywords" = NULL, "parent_id" = NULL, "path" = NULL, "position" = 3, "rgt" = 14, "show_in_menu" = 't', "skip_to_first_child" = 'f', "title" = 'Venues', "updated_at" = '2010-09-19 19:51:30.112522' WHERE ("pages"."id" = 7)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 7) ORDER BY "lft"[0m
+  [1m[35mRefinerySetting Load (0.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."scoping" IS NULL) AND ("refinery_settings"."name" = 'refinery_menu_cache_action_suffix') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:51:30.156090', 't', 'refinery_menu_cache_action_suffix', 'f', NULL, '2010-09-19 19:51:30.156090', 'site_menu')[0m
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mRefinerySetting Load (0.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."scoping" IS NULL) AND ("refinery_settings"."name" = 'default_page_parts') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 19:51:30.171181', 't', 'default_page_parts', 'f', NULL, '2010-09-19 19:51:30.171181', '--- 
+- Body
+- Side Body
+')
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES (NULL, '2010-09-19 19:51:30.191993', 7, NULL, 'Body', '2010-09-19 19:51:30.191993')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "page_parts" ("body", "created_at", "page_id", "position", "title", "updated_at") VALUES (NULL, '2010-09-19 19:51:30.196729', 7, NULL, 'Side Body', '2010-09-19 19:51:30.196729')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100919195107')
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("images")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("inquiries")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("inquiry_settings")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("page_parts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_page_parts_on_page_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_page_parts_on_id')[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("pages")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_rgt')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_parent_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_lft')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_depth')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("refinery_settings")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_refinery_settings_on_name')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("resources")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("roles")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("roles_users")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("slugs")[0m
+  [1m[35mSQL (0.4ms)[0m  PRAGMA index_info('index_slugs_on_sluggable_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_slugs_on_name_and_sluggable_type_and_scope_and_sequence')[0m
+  [1m[35mSQL (0.5ms)[0m  PRAGMA index_list("user_plugins")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_unique_user_plugins')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_user_plugins_on_title')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("venues")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_venues_on_id')
+
+
+Started GET "/refinery" for 127.0.0.1 at Sun Sep 19 14:51:37 -0500 2010
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.5ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mResource Load (0.2ms)[0m  SELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mInquirySetting Load (0.3ms)[0m  SELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mPage Load (0.8ms)[0m  [1mSELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (10.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (11.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (5.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (233.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 540ms (Views: 284.3ms | ActiveRecord: 4.8ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/refinery" for 127.0.0.1 at Sun Sep 19 14:51:51 -0500 2010
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mResource Load (0.2ms)[0m  [1mSELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mInquirySetting Load (0.3ms)[0m  [1mSELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mPage Load (1.0ms)[0m  SELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (24.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (13.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (6.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (250.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 429ms (Views: 308.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/refinery/venues" for 127.0.0.1 at Sun Sep 19 14:51:54 -0500 2010
+
+SyntaxError (/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/controllers/admin/venues_controller.rb:4: syntax error, unexpected ',', expecting kEND
+  , :title_attribute => 'name'
+   ^):
+  
+
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/refinery/venues" for 127.0.0.1 at Sun Sep 19 14:55:22 -0500 2010
+  Processing by Admin::VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.5ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC LIMIT 30 OFFSET 0
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (1.0ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "venues"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) AS count_id FROM "venues"
+  [1m[36mRefinerySetting Load (1.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (48.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (5.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (8.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered vendor/engines/venues/app/views/admin/venues/index.html.erb within layouts/admin (161.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 413ms (Views: 206.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/refinery/venues/new" for 127.0.0.1 at Sun Sep 19 14:55:58 -0500 2010
+  Processing by Admin::VenuesController#new as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.6ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_error_messages.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_form_actions.html.erb (3.2ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _vendor_engines_venues_app_views_admin_venues__form_html_erb___893878783_2172400920_1065630 at /Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/admin/venues/_form.html.erb:1)
+Rendered vendor/engines/venues/app/views/admin/venues/_form.html.erb (42.8ms)
+  [1m[35mRefinerySetting Load (1.0ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (37.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (5.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (6.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.9ms)
+Rendered vendor/engines/venues/app/views/admin/venues/new.html.erb within layouts/admin (164.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 420ms (Views: 222.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/wymiframe" for 127.0.0.1 at Sun Sep 19 14:55:59 -0500 2010
+  Processing by Refinery::FastController#wymiframe as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/wymiframe.html.erb (107.6ms)
+Completed 200 OK in 453ms (Views: 450.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/refinery/venues" for 127.0.0.1 at Sun Sep 19 14:57:46 -0500 2010
+  Processing by Admin::VenuesController#create as HTML
+  Parameters: {"commit"=>"Save", "continue_editing"=>"false", "modal"=>"false", "authenticity_token"=>"7TjAzmVtOtCpQj03UoH9oBXE9vvBR/d+u14sOM3j5nY=", "utf8"=>"✓", "venue"=>{"address"=>"245 West 44th Street New York, NY 10036", "name"=>"Majestic Theatre", "camera_rules"=>"<ul><li>Cameras allowed</li>\r\n<li>No flash</li>\r\n</ul>"}, "locale"=>:en, "dialog"=>"false"}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.5ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT MAX("venues"."position") AS max_id FROM "venues"
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues"."id" FROM "venues" WHERE ("venues"."name" = 'Majestic Theatre') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "venues" ("address", "camera_rules", "created_at", "name", "position", "updated_at") VALUES ('245 West 44th Street New York, NY 10036', '<ul><li>Cameras allowed</li>
+<li>No flash</li>
+</ul>', '2010-09-19 19:57:46.993566', 'Majestic Theatre', 0, '2010-09-19 19:57:46.993566')
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" >= 0) ORDER BY venues.id ASC LIMIT 500[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues"."id" FROM "venues" WHERE ("venues"."name" = 'Majestic Theatre') AND ("venues".id <> 1) LIMIT 1
+Redirected to http://localhost:3001/refinery/venues
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 302 Found in 250ms
+
+
+Started GET "/refinery/venues" for 127.0.0.1 at Sun Sep 19 14:57:47 -0500 2010
+  Processing by Admin::VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.4ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC LIMIT 30 OFFSET 0
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (1.1ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "venues"[0m
+Rendered vendor/engines/venues/app/views/admin/venues/_venue.html.erb (10.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_sortable_list.html.erb (0.6ms)
+Rendered vendor/engines/venues/app/views/admin/venues/_sortable_list.html.erb (31.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) AS count_id FROM "venues"
+  [1m[36mRefinerySetting Load (1.0ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (140.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (5.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (6.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (1.0ms)
+Rendered vendor/engines/venues/app/views/admin/venues/index.html.erb within layouts/admin (286.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 532ms (Views: 330.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Sun Sep 19 14:57:51 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+ERROR: compiling _vendor_engines_venues_app_views_venues_show_html_erb___139132593_2170159160_0 RAISED compile error
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:3: syntax error, unexpected '.', expecting ')'
+  .name
+   ^
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:32: syntax error, unexpected '.', expecting ')'
+        .name
+         ^
+Function body:           def _vendor_engines_venues_app_views_venues_show_html_erb___139132593_2170159160_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "venues/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append_if_string=  content_for :body_content_title do 
+@output_buffer.safe_concat('  ');@output_buffer.append= ( @venue
+  .name
+ );@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append_if_string=  content_for :body_content_left do 
+@output_buffer.safe_concat('  
+  <div>
+    <h3>Name</h3>
+    ');@output_buffer.append= (raw @venue.name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+  <div>
+    <h3>Address</h3>
+    ');@output_buffer.append= (raw @venue.address );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+  <div>
+    <h3>Camera Rules</h3>
+    ');@output_buffer.append= (raw @venue.camera_rules );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append_if_string=  content_for :body_content_right do 
+@output_buffer.safe_concat('  <h2>');@output_buffer.append= ( t('.other') );@output_buffer.safe_concat('</h2>
+  <ul id="venues">
+');@output_buffer.append_if_string=      @venues.each do |venue| 
+@output_buffer.safe_concat('      <li>
+        ');@output_buffer.append= ( link_to venue
+        .name
+      , venue_url(venue) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </li>
+');     end 
+@output_buffer.safe_concat('  </ul>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append= ( render :partial => "/shared/content_page" );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:43:in `compile'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/lib/refinery/application_controller.rb:94:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:465:in `_run__1722552183__process_action__453433196__callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/routing-filter-0.1.6/lib/routing_filter/adapters/rails_3.rb:64:in `recognize'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/dragonfly-0.7.6/lib/dragonfly/middleware.rb:16:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:129:in `forward'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:235:in `fetch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:178:in `lookup'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:65:in `call!'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:50:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/dragonfly-0.7.6/lib/dragonfly/middleware.rb:16:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:129:in `forward'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:235:in `fetch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:178:in `lookup'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:65:in `call!'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:50:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:30
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (2.1ms)
+Completed   in 154ms
+
+ActionView::Template::Error (compile error
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:3: syntax error, unexpected '.', expecting ')'
+  .name
+   ^
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:32: syntax error, unexpected '.', expecting ')'
+        .name
+         ^):
+    1: <% content_for :body_content_title do %>
+    2:   <%= @venue
+    3:   .name
+    4:  %>
+    5: <% end %>
+    6: 
+  
+
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.7ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (75.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (82.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Sun Sep 19 14:59:54 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+ERROR: compiling _vendor_engines_venues_app_views_venues_show_html_erb___139132593_2174005960_0 RAISED compile error
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:3: syntax error, unexpected '.', expecting ')'
+  .name
+   ^
+Function body:           def _vendor_engines_venues_app_views_venues_show_html_erb___139132593_2174005960_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "venues/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append_if_string=  content_for :body_content_title do 
+@output_buffer.safe_concat('  ');@output_buffer.append= ( @venue
+  .name
+ );@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append_if_string=  content_for :body_content_left do 
+@output_buffer.safe_concat('  
+  <div>
+    <h3>Name</h3>
+    ');@output_buffer.append= (raw @venue.name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+  <div>
+    <h3>Address</h3>
+    ');@output_buffer.append= (raw @venue.address );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+  <div>
+    <h3>Camera Rules</h3>
+    ');@output_buffer.append= (raw @venue.camera_rules );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append_if_string=  content_for :body_content_right do 
+@output_buffer.safe_concat('  <h2>');@output_buffer.append= ( t('.other') );@output_buffer.safe_concat('</h2>
+  <ul id="venues">
+');@output_buffer.append_if_string=      @venues.each do |venue| 
+@output_buffer.safe_concat('      <li>
+        ');@output_buffer.append= ( link_to venue.name, venue_url(venue) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </li>
+');     end 
+@output_buffer.safe_concat('  </ul>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append= ( render :partial => "/shared/content_page" );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:41:in `compile'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/lib/refinery/application_controller.rb:94:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:465:in `_run__1722552183__process_action__453433196__callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/routing-filter-0.1.6/lib/routing_filter/adapters/rails_3.rb:64:in `recognize'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/dragonfly-0.7.6/lib/dragonfly/middleware.rb:16:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:129:in `forward'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:235:in `fetch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:178:in `lookup'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:65:in `call!'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:50:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/dragonfly-0.7.6/lib/dragonfly/middleware.rb:16:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:129:in `forward'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:235:in `fetch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:178:in `lookup'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:65:in `call!'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:50:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:30
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (1.4ms)
+Completed   in 214ms
+
+ActionView::Template::Error (compile error
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:3: syntax error, unexpected '.', expecting ')'
+  .name
+   ^):
+    1: <% content_for :body_content_title do %>
+    2:   <%= @venue
+    3:   .name
+    4:  %>
+    5: <% end %>
+    6: 
+  
+
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (168.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (176.3ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Sun Sep 19 15:03:28 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+ERROR: compiling _vendor_engines_venues_app_views_venues_show_html_erb___139132593_2172094800_0 RAISED compile error
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:3: syntax error, unexpected '.', expecting ')'
+  .name
+   ^
+Function body:           def _vendor_engines_venues_app_views_venues_show_html_erb___139132593_2172094800_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "venues/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append_if_string=  content_for :body_content_title do 
+@output_buffer.safe_concat('  ');@output_buffer.append= ( @venue
+  .name
+ );@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append_if_string=  content_for :body_content_left do 
+@output_buffer.safe_concat('  
+  <div>
+    <h3>Name</h3>
+    ');@output_buffer.append= (raw @venue.name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+  <div>
+    <h3>Address</h3>
+    ');@output_buffer.append= (raw @venue.address );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+  <div>
+    <h3>Camera Rules</h3>
+    ');@output_buffer.append= (raw @venue.camera_rules );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append_if_string=  content_for :body_content_right do 
+@output_buffer.safe_concat('  <h2>');@output_buffer.append= ( t('.other') );@output_buffer.safe_concat('</h2>
+  <ul id="venues">
+');@output_buffer.append_if_string=      @venues.each do |venue| 
+@output_buffer.safe_concat('      <li>
+        ');@output_buffer.append= ( link_to venue.name, venue_url(venue) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </li>
+');     end 
+@output_buffer.safe_concat('  </ul>
+'); end 
+@output_buffer.safe_concat('
+');@output_buffer.append= ( render :partial => "/shared/content_page" );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:41:in `compile'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/lib/refinery/application_controller.rb:94:in `render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:465:in `_run__1722552183__process_action__453433196__callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/routing-filter-0.1.6/lib/routing_filter/adapters/rails_3.rb:64:in `recognize'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/dragonfly-0.7.6/lib/dragonfly/middleware.rb:16:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:129:in `forward'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:235:in `fetch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:178:in `lookup'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:65:in `call!'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:50:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/dragonfly-0.7.6/lib/dragonfly/middleware.rb:16:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:129:in `forward'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:235:in `fetch'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:178:in `lookup'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:65:in `call!'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-cache-0.5.3/lib/rack/cache/context.rb:50:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/hubble/.rvm/rubies/ruby-1.8.7-p299/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:30
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (1.4ms)
+Completed   in 218ms
+
+ActionView::Template::Error (compile error
+/Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:3: syntax error, unexpected '.', expecting ')'
+  .name
+   ^):
+    1: <% content_for :body_content_title do %>
+    2:   <%= @venue
+    3:   .name
+    4:  %>
+    5: <% end %>
+    6: 
+  
+
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (161.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (168.3ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Sun Sep 19 15:03:46 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mRefinerySetting Load (85.5ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mRefinerySetting Load (0.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."scoping" IS NULL) AND ("refinery_settings"."name" = 'page_title') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-19 20:03:47.014046', 't', 'page_title', 'f', NULL, '2010-09-19 20:03:47.014046', '--- 
+:chain_page_title: false
+:page_title: 
+ :wrap_if_not_chained: false
+ :class: 
+ :tag: 
+:ancestors: 
+ :class: ancestors
+ :tag: span
+ :separator: " | "
+')
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (161.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (34.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.4ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (156.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (181.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (196.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (471.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 605ms (Views: 423.9ms | ActiveRecord: 94.6ms)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/refinery/settings" for 127.0.0.1 at Sun Sep 19 15:05:05 -0500 2010
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (0.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (31.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (1.1ms)
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (19.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (92.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (6.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (251.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 527ms (Views: 307.6ms | ActiveRecord: 4.3ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to AddMissingIndexes (20091109012126)
+Migrating to AddDownForMaintenancePage (20091130040711)
+Migrating to AddSuperuserToUsers (20091207033335)
+Migrating to AddThemesTable (20100114092849)
+Migrating to RenameTitleToNameOnUserPlugins (20100125003944)
+Migrating to MigrateOldPluginTitlesToPluginNamesForUsers (20100125033146)
+Migrating to AddResetCodeToUsers (20100127004649)
+Migrating to RemoveCustomTitleImageIdAndImageIdFromPages (20100202034802)
+Migrating to ChangePartTitlesToTitleizedVersionForNewFormat (20100204011654)
+Migrating to RemoveThemesTable (20100223211536)
+Migrating to ChangeUsersColumnsForAuthlogic (20100305023036)
+Migrating to RemoveUnusedUsersColumns (20100305023037)
+Migrating to MakeUserPerishableTokenNullable (20100312155331)
+Migrating to MakeUserPersistenceTokenNullable (20100312160327)
+Migrating to RemoveStateFromUsers (20100315203301)
+Migrating to ChangeImageGridThumbnailSizeAndRegenerate (20100419001048)
+Migrating to RenamePermissionsForResourcesPluginToFiles (20100522020225)
+Migrating to RemoveTakeDownForMaintenancePage (20100525084518)
+Migrating to AddSmallAndLargeThumbnailSizes (20100525110237)
+Migrating to UpdateLinkUrlOnPagesFromInquiriesNewToContact (20100530205942)
+Migrating to ConvertResourceToDragonfly (20100605132138)
+Migrating to ConvertImageToDragonfly (20100605132208)
+Migrating to ChangeThumbnailSizesForDragonfly (20100606135207)
+Migrating to AddScopingToRefinerySettings (20100608062447)
+Migrating to AddRestrictedToRefinerySettings (20100623220402)
+Migrating to AddRoles (20100624024501)
+Migrating to AddCallbackProcAsStringToRefinerySettings (20100629081543)
+Migrating to RemoveSuperuserFromUsers (20100701053151)
+Migrating to AddSpamToInquiries (20100702022630)
+Migrating to EnsureUserPluginsUseNameAndNotTitle (20100708014636)
+Migrating to RemovePageTranslationsIfPresent (20100729221735)
+Migrating to MoveInquirySettingsToRefinerySettings (20100826232810)
+Migrating to MovePageToNestedSet (20100831122919)
+Migrating to AddCachedSlugToPages (20100913234704)
+Migrating to CreateVenues (20100919195107)
+Migrating to CreateComments (20100919201105)
+  [1m[36mSQL (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.8ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(50) DEFAULT '', "comment" text DEFAULT '', "commentable_id" integer, "commentable_type" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE INDEX "index_comments_on_commentable_type" ON "comments" ("commentable_type")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_comments_on_commentable_type')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_comments_on_commentable_id" ON "comments" ("commentable_id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("comments")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_comments_on_commentable_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_comments_on_commentable_type')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100919201105')
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("comments")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_comments_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_comments_on_commentable_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_comments_on_commentable_type')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("images")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("inquiries")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("inquiry_settings")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("page_parts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_page_parts_on_page_id')
+  [1m[36mSQL (0.5ms)[0m  [1mPRAGMA index_info('index_page_parts_on_id')[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("pages")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_rgt')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_parent_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_lft')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_pages_on_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_pages_on_depth')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("refinery_settings")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_refinery_settings_on_name')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("resources")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("roles")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("roles_users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("slugs")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_slugs_on_sluggable_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_slugs_on_name_and_sluggable_type_and_scope_and_sequence')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("user_plugins")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_unique_user_plugins')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_user_plugins_on_title')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("venues")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_venues_on_id')
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/venues/1" for 127.0.0.1 at Sun Sep 19 15:20:10 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed   in 93ms
+
+NameError (undefined local variable or method `acts_as_commentable' for #<Class:0x102f18b48>):
+  
+
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[36mPage Load (1.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.7ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (214.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (222.9ms)
+
+
+Started GET "/refinery/settings" for 127.0.0.1 at Sun Sep 19 15:20:13 -0500 2010
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (1.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (48.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (1.3ms)
+  [1m[35mRefinerySetting Load (1.0ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (35.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (5.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (8.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (1.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (236.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 577ms (Views: 307.2ms | ActiveRecord: 9.5ms)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.0ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/venues/1" for 127.0.0.1 at Sun Sep 19 15:21:41 -0500 2010
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (1.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (52.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (36.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.7ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (189.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (213.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (234.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.9ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (534.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 669ms (Views: 585.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/refinery/settings" for 127.0.0.1 at Sun Sep 19 15:21:47 -0500 2010
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (34.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (0.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (12.3ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (5.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (7.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (1.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (196.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 516ms (Views: 258.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/refinery/venues" for 127.0.0.1 at Sun Sep 19 15:21:54 -0500 2010
+  Processing by Admin::VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (3.7ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.5ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC LIMIT 30 OFFSET 0
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (2.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "venues"[0m
+Rendered vendor/engines/venues/app/views/admin/venues/_venue.html.erb (7.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_sortable_list.html.erb (0.6ms)
+Rendered vendor/engines/venues/app/views/admin/venues/_sortable_list.html.erb (48.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) AS count_id FROM "venues"
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (45.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (6.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (1.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered vendor/engines/venues/app/views/admin/venues/index.html.erb within layouts/admin (331.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 637ms (Views: 386.1ms | ActiveRecord: 6.9ms)

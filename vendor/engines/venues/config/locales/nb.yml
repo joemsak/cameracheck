@@ -1,0 +1,19 @@
+nb:
+  plugins:
+    venues:
+      title: Venues
+  admin:
+    venues:
+      index:
+        create_new: Lag en ny Venue
+        reorder: Endre rekkefølgen på Venues
+        reorder_done: Ferdig å endre rekkefølgen Venues
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Venues enda. Klikk på "Lag en ny Venue" for å legge til din første venue.
+      venue:
+        view_live: Vis hvordan denne venue ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne venue
+        delete: Fjern denne venue permanent
+  venues:
+    show:
+      other: Andre Venues

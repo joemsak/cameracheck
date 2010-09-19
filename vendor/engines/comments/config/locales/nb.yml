@@ -1,0 +1,19 @@
+nb:
+  plugins:
+    comments:
+      title: Comments
+  admin:
+    comments:
+      index:
+        create_new: Lag en ny Comment
+        reorder: Endre rekkefølgen på Comments
+        reorder_done: Ferdig å endre rekkefølgen Comments
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Comments enda. Klikk på "Lag en ny Comment" for å legge til din første comment.
+      comment:
+        view_live: Vis hvordan denne comment ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne comment
+        delete: Fjern denne comment permanent
+  comments:
+    show:
+      other: Andre Comments

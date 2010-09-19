@@ -1,0 +1,29 @@
+<% form_for [:admin, @venue] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @venue,
+    :include_object_name => true
+  } %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :address -%>
+    <%= f.text_field :address -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :camera_rules -%>
+    <%= f.text_area :camera_rules, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.venues.venue.delete'),
+                :delete_confirmation => t('shared.admin.delete.message', :title => @venue.name)
+              } %>
+<% end -%>

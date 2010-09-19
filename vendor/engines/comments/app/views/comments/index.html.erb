@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="comments">
+    <% @comments.each do |comment| %>
+      <li>
+        <%= link_to comment, comment_url(comment) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
