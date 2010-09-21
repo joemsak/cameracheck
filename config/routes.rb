@@ -4,7 +4,7 @@ Refinery::Application.routes.draw do
 
   filter(:refinery_locales) if defined?(RoutingFilter::RefineryLocales) # optionally use i18n.
 
-  root :to => 'pages#home'
+  root :to => 'venues#index'
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     root :to => 'dashboard#index'
