@@ -20,7 +20,7 @@ class VenuesController < ApplicationController
 protected
 
   def find_all_venues
-    @venues = Venue.find(:all, :order => "position ASC")
+    @venues = Venue.all
   end
 
   def find_page

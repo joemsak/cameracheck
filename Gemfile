@@ -65,4 +65,3 @@ gem 'acts_as_commentable'
 # END USER DEFINED
 
 gem 'refinerycms-venues', '1.0', :path => 'vendor/engines', :require => 'venues'
-gem 'refinerycms-comments', '1.0', :path => 'vendor/engines', :require => 'comments'

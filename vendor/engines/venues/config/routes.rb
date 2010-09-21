@@ -1,7 +1,5 @@
 Refinery::Application.routes.draw do
-  resources :venues do
-    resources :comments
-  end
+  resources :venues
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :venues do
