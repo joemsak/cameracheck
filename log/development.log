@@ -3285,3 +3285,1881 @@ Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4
 Rendered vendor/engines/venues/app/views/admin/venues/index.html.erb within layouts/admin (331.2ms)
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
 Completed 200 OK in 637ms (Views: 386.1ms | ActiveRecord: 6.9ms)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 19:12:05 -0500 2010
+  [1m[36mRefinerySetting Load (1.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (39.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (4.7ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (59.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (84.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (102.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (1.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/pages/app/views/pages/home.html.erb within layouts/application (230.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 619ms (Views: 311.6ms | ActiveRecord: 6.3ms)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."scoping" IS NULL) AND ("refinery_settings"."name" = 'theme') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-21 00:12:26.041804', 't', 'theme', 'f', NULL, '2010-09-21 00:12:26.041804', 'cameracheck')
+  [1m[36mRefinerySetting Load (0.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+
+
+Started GET "/admin" for 127.0.0.1 at Mon Sep 20 19:13:04 -0500 2010
+
+
+Started GET "/refinery" for 127.0.0.1 at Mon Sep 20 19:13:05 -0500 2010
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.6ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mResource Load (0.2ms)[0m  SELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mInquirySetting Load (0.3ms)[0m  SELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mPage Load (0.8ms)[0m  [1mSELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (14.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (12.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (8.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (163.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 476ms (Views: 221.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/refinery/venues" for 127.0.0.1 at Mon Sep 20 19:13:16 -0500 2010
+  Processing by Admin::VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC LIMIT 30 OFFSET 0[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (0.9ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "venues"
+Rendered vendor/engines/venues/app/views/admin/venues/_venue.html.erb (7.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_sortable_list.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/admin/venues/_sortable_list.html.erb (43.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "venues"[0m
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (49.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (6.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (99.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/admin/venues/index.html.erb within layouts/admin (305.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 553ms (Views: 353.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/refinery/settings" for 127.0.0.1 at Mon Sep 20 19:15:17 -0500 2010
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.6ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (0.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (28.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (0.8ms)
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (20.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (5.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (158.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 408ms (Views: 209.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/refinery/settings?page=2" for 127.0.0.1 at Mon Sep 20 19:15:23 -0500 2010
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"page"=>"2", "locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (0.5ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 12
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (20.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (1.2ms)
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (107.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (5.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (238.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 494ms (Views: 289.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 19:15:27 -0500 2010
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC[0m
+  [1m[35mRefinerySetting Load (1.0ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (34.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.3ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (135.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (160.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (175.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/pages/app/views/pages/home.html.erb within layouts/application (316.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 561ms (Views: 365.8ms | ActiveRecord: 5.3ms)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.0ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/refinery/settings?page=2" for 127.0.0.1 at Mon Sep 20 19:48:20 -0500 2010
+  [1m[36mRefinerySetting Load (2.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"page"=>"2", "locale"=>:en}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (0.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."scoping" IS NULL) AND ("refinery_settings"."name" = 'refinery_menu_cache_action_suffix') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (0.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 17) LIMIT 1
+  [1m[36mSQL (22.0ms)[0m  [1mUPDATE "refinery_settings" SET "callback_proc_as_string" = NULL, "updated_at" = '2010-09-21 00:48:20.420504', "value" = 'cameracheck_site_menu' WHERE ("refinery_settings"."id" = 17)[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.5ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1
+  [1m[36mRefinerySetting Load (0.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 12[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (52.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (11.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (6.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (216.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 634ms (Views: 311.4ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 19:48:22 -0500 2010
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (1.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (33.8ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (144.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (171.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (190.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered themes/cameracheck/views/pages/home.html.erb within layouts/application (321.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 600ms (Views: 345.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/refinery/settings/20/edit?app_dialog=true&dialog=true" for 127.0.0.1 at Mon Sep 20 19:48:32 -0500 2010
+  Processing by Admin::RefinerySettingsController#edit as HTML
+  Parameters: {"id"=>"20", "app_dialog"=>"true", "locale"=>:en, "dialog"=>"true"}
+  [1m[35mRefinerySetting Load (0.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 20) LIMIT 1
+  [1m[36mRefinerySetting Load (1.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 20) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_error_messages.html.erb (0.9ms)
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_form_actions.html.erb (3.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_form.html.erb (150.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (12.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/edit.html.erb within layouts/admin_dialog (209.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 606ms (Views: 356.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 19:48:35 -0500 2010
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (126.8ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (48.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (74.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (92.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered themes/cameracheck/views/pages/home.html.erb within layouts/application (314.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 565ms (Views: 337.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 19:48:37 -0500 2010
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (2.0ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (4.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (32.2ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (58.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (85.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (102.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.9ms)
+Rendered themes/cameracheck/views/pages/home.html.erb within layouts/application (231.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 501ms (Views: 253.7ms | ActiveRecord: 7.0ms)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (0.8ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 19:48:52 -0500 2010
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (122.4ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (52.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (77.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (96.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered themes/cameracheck/views/pages/home.html.erb within layouts/application (314.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 438ms (Views: 338.9ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/refinery/settings/20" for 127.0.0.1 at Mon Sep 20 19:50:15 -0500 2010
+  Processing by Admin::RefinerySettingsController#update as HTML
+  Parameters: {"commit"=>"Save", "continue_editing"=>"false", "modal"=>"true", "authenticity_token"=>"7TjAzmVtOtCpQj03UoH9oBXE9vvBR/d+u14sOM3j5nY=", "utf8"=>"✓", "id"=>"20", "locale"=>:en, "refinery_setting"=>{"restricted"=>"0", "value"=>"cameracheck"}, "dialog"=>"true"}
+  [1m[35mRefinerySetting Load (0.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 20) LIMIT 1
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.4ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."id" = 20) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "refinery_settings" SET "callback_proc_as_string" = NULL, "value" = 'cameracheck' WHERE ("refinery_settings"."id" = 20)
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered text template (0.0ms)
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 386ms (Views: 145.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/refinery/settings?page=2" for 127.0.0.1 at Mon Sep 20 19:50:15 -0500 2010
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"page"=>"2", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (0.5ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 12
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (17.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (0.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (12.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (90.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (1.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (256.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 542ms (Views: 327.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/refinery/settings?page=1" for 127.0.0.1 at Mon Sep 20 19:50:26 -0500 2010
+  Processing by Admin::RefinerySettingsController#index as HTML
+  Parameters: {"page"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Superuser') LIMIT 1[0m
+  [1m[35mRefinerySetting Load (0.9ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings" ORDER BY name ASC LIMIT 12 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/_refinery_setting.html.erb (23.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_search.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_head.html.erb (10.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/admin/_menu.html.erb (5.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/settings/app/views/admin/refinery_settings/index.html.erb within layouts/admin (162.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 458ms (Views: 230.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 19:53:23 -0500 2010
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (115.3ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (49.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (77.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (94.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered themes/cameracheck/views/pages/home.html.erb within layouts/application (301.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 543ms (Views: 323.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/venues" for 127.0.0.1 at Mon Sep 20 19:53:29 -0500 2010
+  Processing by VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (34.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.1ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (186.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (213.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (230.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/index.html.erb within layouts/application (393.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 837ms (Views: 615.0ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/venues" for 127.0.0.1 at Mon Sep 20 19:59:50 -0500 2010
+  Processing by VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (36.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (1.8ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (34.4ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.7ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (63.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (214.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (233.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/index.html.erb within layouts/application (401.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 658ms (Views: 422.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 19:59:55 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (135.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (32.3ms)
+  [1m[36mPage Load (1.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (60.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (86.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (105.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (369.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 635ms (Views: 393.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:00:27 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.6ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.5ms)
+  [1m[35mPage Load (2.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (164.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (192.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (209.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (368.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 615ms (Views: 390.9ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:03:53 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (40.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (132.4ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (61.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (89.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (106.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (377.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 639ms (Views: 404.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:04:29 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.8ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (162.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (187.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (205.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (362.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 608ms (Views: 386.7ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:04:47 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (34.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (129.8ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (61.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (87.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (104.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (363.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 608ms (Views: 386.7ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:05:46 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (2.0ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (34.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.8ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (164.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (190.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (207.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.9ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (366.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 615ms (Views: 390.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:06:19 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (32.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (128.6ms)
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (58.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (84.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (102.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (356.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 616ms (Views: 381.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:06:34 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.8ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (166.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (193.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (210.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (368.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 611ms (Views: 391.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:06:44 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (2.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (31.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (135.9ms)
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (60.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (88.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (106.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.7ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (366.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 620ms (Views: 390.0ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:07:05 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.0ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (169.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (195.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (214.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (374.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 628ms (Views: 397.5ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:07:51 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.6ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (32.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (162.1ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (133.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (167.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (186.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (506.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 772ms (Views: 530.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:10:46 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (32.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (4.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.2ms)
+  [1m[35mPage Load (0.9ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (161.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (187.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (205.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (363.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 604ms (Views: 387.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:10:50 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (36.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (147.7ms)
+  [1m[36mPage Load (0.8ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (1.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (59.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (88.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (108.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (395.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 667ms (Views: 417.7ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:11:05 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.3ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (167.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (194.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (211.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (372.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 632ms (Views: 396.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:11:35 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (32.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (136.0ms)
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (64.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (92.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (110.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (372.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 632ms (Views: 396.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:15:29 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.6ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (155.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (180.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (198.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (356.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 597ms (Views: 380.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:15:53 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.6ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (35.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (130.9ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (61.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (87.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (105.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (368.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 632ms (Views: 393.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:16:06 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _vendor_engines_venues_app_views_venues_show_html_erb___139132593_2200736420_0 at /Users/hubble/Projects/cameracheck/vendor/engines/venues/app/views/venues/show.html.erb:1)
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (34.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.0ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.8ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (164.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (191.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (209.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (367.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 614ms (Views: 391.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:16:18 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (31.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (135.6ms)
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (59.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (86.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (104.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (366.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 617ms (Views: 389.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Sep 20 20:16:43 -0500 2010
+  Processing by PagesController#home as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/') LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 1) ORDER BY position ASC[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 1 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (4.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (33.3ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (157.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (184.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (201.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.9ms)
+Rendered themes/cameracheck/views/pages/home.html.erb within layouts/application (329.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 605ms (Views: 351.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/about" for 127.0.0.1 at Mon Sep 20 20:16:47 -0500 2010
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"about", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."cached_slug" = 'about') LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 3) ORDER BY position ASC[0m
+  [1m[35mSlug Load (0.4ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 3 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (34.3ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (178.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (205.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (223.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered themes/cameracheck/views/pages/show.html.erb within layouts/application (351.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 625ms (Views: 372.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/contact" for 127.0.0.1 at Mon Sep 20 20:16:51 -0500 2010
+  Processing by InquiriesController#new as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRefinerySetting Load (1.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/contact') LIMIT 1
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 4) ORDER BY position ASC[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 4 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/admin/_error_messages.html.erb (1.1ms)
+  [1m[36mRefinerySetting Load (0.2ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings" WHERE ("refinery_settings"."scoping" IS NULL) AND ("refinery_settings"."name" = 'show_contact_privacy_link') LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "refinery_settings" ("callback_proc_as_string", "created_at", "destroyable", "name", "restricted", "scoping", "updated_at", "value") VALUES (NULL, '2010-09-21 01:16:51.893315', 't', 'show_contact_privacy_link', 'f', NULL, '2010-09-21 01:16:51.893315', 'false')
+  [1m[36mRefinerySetting Load (0.9ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (3.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (2.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRole Load (0.7ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.1ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (139.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (165.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (182.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-inquiries-0.9.8.7/app/views/inquiries/new.html.erb within layouts/application (417.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 871ms (Views: 473.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/venues" for 127.0.0.1 at Mon Sep 20 20:16:52 -0500 2010
+  Processing by VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.7ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.3ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (158.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (186.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (203.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/index.html.erb within layouts/application (361.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 618ms (Views: 384.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/venues" for 127.0.0.1 at Mon Sep 20 20:17:24 -0500 2010
+  Processing by VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (32.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.1ms)
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.0ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (60.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (188.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (205.9ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/index.html.erb within layouts/application (365.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 612ms (Views: 388.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/venues" for 127.0.0.1 at Mon Sep 20 20:18:08 -0500 2010
+  Processing by VenuesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (131.1ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.3ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (55.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (81.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (98.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (1.3ms)
+Rendered vendor/engines/venues/app/views/venues/index.html.erb within layouts/application (356.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 725ms (Views: 381.8ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:18:11 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (33.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (30.7ms)
+  [1m[35mPage Load (102.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.6ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (58.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (187.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (206.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (365.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 607ms (Views: 288.3ms | ActiveRecord: 109.5ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:18:34 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (1.7ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (32.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (136.2ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (60.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (87.7ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (105.2ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (368.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 630ms (Views: 392.1ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:18:52 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (1.8ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (34.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (31.1ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (176.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (201.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (218.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.9ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (379.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 632ms (Views: 403.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:19:03 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[35mRefinerySetting Load (2.4ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (31.4ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (146.4ms)
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (0.6ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (60.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (87.5ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (106.0ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (378.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 635ms (Views: 402.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/venues/1" for 127.0.0.1 at Mon Sep 20 20:19:12 -0500 2010
+  Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"1", "locale"=>:en}
+  [1m[36mRefinerySetting Load (2.0ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" ORDER BY position ASC
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/venues') LIMIT 1[0m
+  [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE ("venues"."id" = 1) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 7) ORDER BY position ASC[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_content_page.html.erb (34.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_head.html.erb (3.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (39.3ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (0.5ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (1,3,4,7)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 1 AND "pages"."rgt" <= 4) AND ("pages".id != 1) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [1m[35mPage Load (0.8ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 7 AND "pages"."rgt" <= 12) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu_branch.html.erb (170.8ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_menu.html.erb (197.6ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_header.html.erb (215.3ms)
+Rendered /Users/hubble/.rvm/gems/ruby-1.8.7-p299@rails3/gems/refinerycms-0.9.8.4/vendor/refinerycms/core/app/views/shared/_footer.html.erb (0.8ms)
+Rendered vendor/engines/venues/app/views/venues/show.html.erb within layouts/application (387.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 648ms (Views: 410.6ms | ActiveRecord: 8.1ms)

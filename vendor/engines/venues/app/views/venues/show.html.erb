@@ -1,21 +1,17 @@
 <% content_for :body_content_title do %>
-  <%= @venue.name %>
-<% end %>
+&nbsp;<% end %>
 
 <% content_for :body_content_left do %>
   
-  <div>
-    <h3>Name</h3>
+  <div id="venue_name">
     <%=raw @venue.name %>
   </div>
   
   <div>
-    <h3>Address</h3>
-    <%=raw @venue.address %>
+    <%= link_to raw(@venue.address), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(raw @venue.address)}&ie=UTF8&z=16" %>
   </div>
   
-  <div>
-    <h3>Camera Rules</h3>
+  <div id="camera_rules">
     <%=raw @venue.camera_rules %>
   </div>
   

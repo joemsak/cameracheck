@@ -1,5 +1,98 @@
+/* @override http://cameracheck.heroku.com/stylesheets/application.css?1284927852 */
+
 @import url('refinery/application.css');
 /*  
   Override default refinery application CSS below. 
   Formatting applies to all frontend.
 */
+
+body{
+	background: #333;
+}
+
+#page_container{
+	width: 974px;
+	margin: 0 auto;
+	color: #666;
+	font: normal 12px "Lucida Grande", Arial, sans-serif;
+}
+#menu{
+	background: #ddd;
+}
+#menu ul{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#menu li{
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style:none;
+}
+
+#header h1 a{
+  color:#888;
+  text-decoration:none;
+  display:inline-block;
+  padding:0 0 10px;
+  border-bottom:2px solid fuchsia;
+}
+#header h1 a:hover{
+  padding:0 0 2px;
+  border-bottom-width:10px;
+}
+
+#menu a{
+	display: block;
+	padding: 5px 10px;
+	color: #333;
+	text-decoration:none;
+}
+#menu .selected a, #menu a:hover{
+	background: #fff;
+}
+
+#header h1{
+	font-size: 21px;
+}
+
+h1, h2, h3{
+	margin: 20px 0;
+	font-size: 16px;
+	color: #888;
+}
+
+#body_content ul li{
+	font-size: 24px;
+	margin: 10px 0;
+	list-style: none;
+}
+
+#body_content ul li a{
+	color: #fff;
+	text-decoration:none;
+	display: block;
+	padding: 10px;
+}
+
+
+#body_content a{
+	color: #fff;
+}
+
+#body_content a:hover{
+	background: fuchsia;
+}
+
+#venue_name{
+  font-size:42px;
+  margin:0 0 25px;
+}
+
+#camera_rules{
+  padding:10px;
+  color:fuchsia;
+  text-align:center;
+}

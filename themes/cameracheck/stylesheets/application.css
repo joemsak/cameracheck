@@ -1,0 +1,49 @@
+/* @override http://cameracheck.heroku.com/stylesheets/application.css?1284927852 */
+
+@import url('refinery/application.css');
+/*  
+  Override default refinery application CSS below. 
+  Formatting applies to all frontend.
+*/
+
+body{
+	background: #333;
+}
+
+#page_container{
+	width: 974px;
+	margin: 0 auto;
+	color: #666;
+	font: normal 12px "Lucida Grande", Arial, sans-serif;
+}
+#menu{
+	background: #ddd;
+}
+#menu ul{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#menu li{
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style:none;
+}
+
+#menu a{
+	display: block;
+	padding: 5px 10px;
+	color: #333;
+}
+#menu a:hover{
+	background: #fff;
+}
+
+
+
+a{
+	color: #fff;
+	text-decoration:none;
+}
