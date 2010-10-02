@@ -7,5 +7,11 @@ class Venue < ActiveRecord::Base
   validates_uniqueness_of :name
   
   default_scope :order => 'name ASC'
+  
+  has_friendly_id :name, :use_slug => true
+  
+  def camera_rules
+    [allows_point_and_shoot, allows_slr, allows_flash].reject { |rule| !rule || rule.nil? }
+  end
 
 end
