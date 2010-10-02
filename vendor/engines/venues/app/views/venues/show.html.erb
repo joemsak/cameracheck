@@ -6,7 +6,7 @@
   </div>
   
   <div>
-    <%= link_to raw(@venue.address), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(raw @venue.address)}&ie=UTF8&z=16" %>
+    <%= link_to raw(@venue.address), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(raw @venue.address)}&ie=UTF8&z=16", :class => 'map_link' %>
   </div>
   
   
