@@ -86,13 +86,14 @@ h1, h2, h3{
 }
 
 #body_content a.map_link{
-  padding:10px 0 0 20px;
+  padding:1px 0 0 20px;
   background:url(/images/map.png) no-repeat left bottom;
 }
 
 #body_content a:hover, ul#venues a.selected{
-	background: fuchsia;
+	background-color: fuchsia;
 }
+
 
 #venue_name{
   font-size:42px;
