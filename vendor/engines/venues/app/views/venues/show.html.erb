@@ -9,8 +9,11 @@
     <%= link_to raw(@venue.address), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(raw @venue.address)}&ie=UTF8&z=16" %>
   </div>
   
+  
   <div id="camera_rules">
-    <%=raw @venue.camera_rules %>
+    <ul>
+      <%= raw camera_rules_for(@venue) %>
+    </ul>
   </div>
   
 <% end %>

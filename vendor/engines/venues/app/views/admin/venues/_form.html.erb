@@ -15,8 +15,10 @@
   </div>
   
   <div class='field'>
-    <%= f.label :camera_rules -%>
-    <%= f.text_area :camera_rules, :rows => 20, :class => 'wymeditor widest' -%>
+    <%= label_tag :camera_rules -%>
+    <%= f.check_box :allows_point_and_shoot %> <%= f.label :allows_point_and_shoot, 'Point & Shoot allowed?', :class => 'stripped' %><br>
+    <%= f.check_box :allows_slr %> <%= f.label :allows_slr, 'SLR allowed?', :class => 'stripped' %><br>
+    <%= f.check_box :allows_flash %> <%= f.label :allows_flash, 'Flash OK?', :class => 'stripped' %>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",

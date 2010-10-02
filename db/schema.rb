@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100919201105) do
+ActiveRecord::Schema.define(:version => 20101002180518) do
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -155,10 +155,12 @@ ActiveRecord::Schema.define(:version => 20100919201105) do
   create_table "venues", :force => true do |t|
     t.string   "name"
     t.string   "address"
-    t.text     "camera_rules"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "allows_point_and_shoot"
+    t.boolean  "allows_slr"
+    t.boolean  "allows_flash"
   end
 
   add_index "venues", ["id"], :name => "index_venues_on_id"
