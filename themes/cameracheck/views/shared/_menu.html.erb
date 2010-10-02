@@ -1,4 +1,4 @@
-<%
+<% if false
   dom_id ||= 'menu'
   css ||= 'menu'
   hide_children = RefinerySetting.find_or_set(:menu_hide_children, false) unless defined?(hide_children)
@@ -29,4 +29,5 @@
   <%
     end
   end
+end
 -%>
