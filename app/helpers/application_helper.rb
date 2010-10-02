@@ -16,4 +16,8 @@ module ApplicationHelper
     
     return html
   end
+  
+  def selected?(venue)
+    return venue == @venue ? "selected" : nil
+  end
 end

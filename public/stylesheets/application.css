@@ -85,7 +85,7 @@ h1, h2, h3{
 	color: #fff;
 }
 
-#body_content a:hover{
+#body_content a:hover, ul#venues a.selected{
 	background: fuchsia;
 }
 

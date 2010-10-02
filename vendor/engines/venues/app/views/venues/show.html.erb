@@ -23,7 +23,7 @@
   <ul id="venues">
     <% @venues.each do |venue| %>
       <li>
-        <%= link_to venue.name, venue_url(venue) %>
+        <%= link_to venue.name, venue_url(venue), :class => selected?(venue) %>
       </li>
     <% end %>
   </ul>
