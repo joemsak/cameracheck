@@ -16,6 +16,19 @@ class VenuesController < ApplicationController
     # by swapping @page for @venue in the line below:
     present(@page)
   end
+  
+  def new
+    @venue = Venue.new
+  end
+
+  def create
+    @venue = Venue.new(params[:venue])
+    if @venue.save
+      redirect_to @venue, :notice => '<div class="success">Thanks for submitting a new venue. <strong>You rock.</strong></div>'
+    else
+      render :new
+    end
+  end
 
 protected
 

@@ -1,0 +1,25 @@
+<% form_for @venue do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @venue,
+    :include_object_name => true
+  } %>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :address -%>
+    <%= f.text_field :address, :placeholder => "Just like you'd type into google" -%>
+  </div>
+  
+  <div class='field'>
+    <%= label_tag :camera_rules -%>
+    <%= f.check_box :allows_point_and_shoot %> <%= f.label :allows_point_and_shoot, 'Point & Shoot allowed?', :class => 'stripped' %><br>
+    <%= f.check_box :allows_slr %> <%= f.label :allows_slr, 'SLR allowed?', :class => 'stripped' %><br>
+    <%= f.check_box :allows_flash %> <%= f.label :allows_flash, 'Flash OK?', :class => 'stripped' %>
+  </div>
+  
+  <%= f.submit 'Save Venue' %>
+<% end -%>

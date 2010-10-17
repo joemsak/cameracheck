@@ -10,6 +10,7 @@
           <%= render :partial => "/shared/header" %>
         </div>
         <div id='body' class='clearfix'>
+          <%=raw flash[:notice] %>
           <%= yield %>
         </div>
         <div id='footer'>

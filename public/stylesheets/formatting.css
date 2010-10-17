@@ -3,3 +3,13 @@
   Override default refinery formatting below. 
   Formatting applies to backend WYSIWYG editors and all frontend. 
 */
+
+.fieldWithErrors label{
+  color:#fff;
+}
+
+#errorExplanation{
+  border: 3px solid #F27F7F;
+  margin:0 0 25px;
+  width:350px;
+}

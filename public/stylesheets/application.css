@@ -67,6 +67,11 @@ h1, h2, h3{
 	color: #888;
 }
 
+ul#venues{
+  margin:0;
+  padding:0;
+}
+
 #body_content ul li{
 	font-size: 24px;
 	margin: 10px 0;
@@ -99,6 +104,15 @@ h1, h2, h3{
   font-size:42px;
   margin:0 0 25px;
 }
+form #venue_name{
+  font-size:14px;
+  padding:5px;
+}
+#venue_address{
+  width:400px;
+  margin:0 0 25px;
+  padding:5px;
+}
 
 #camera_rules{
   padding:10px;
@@ -113,4 +127,62 @@ h1, h2, h3{
 #footer a{
   color:#fff;
   text-decoration:none;
+}
+
+label{
+  display:block;
+  margin:0 0 5px;
+  color:#fff;
+  font-size:16px;
+}
+label.stripped{
+  display:inline;
+  margin:0;
+  font-size:12px;
+}
+
+input{
+  margin:5px 0;
+}
+
+input[@type=text]{
+  padding:5px;
+  border:1px solid #ddd;
+}
+
+#venue_submit{
+  display:inline-block;
+  margin:20px 0;
+}
+
+.fieldWithErrors input{
+  background:#FFBEBE;
+}
+
+.success{
+  display:inline-block;
+  clear:both;
+  padding:10px;
+  font-size:14px;
+  color:#205791;
+  background:#D5EDF8;
+  border:2px solid #92CAE4;
+  margin:10px 0;
+}
+
+.button{
+  display:inline-block;
+  padding:5px 10px;
+  font-size:16px;
+  margin:0 0 0 5px;
+}
+.positive{
+  background: #E6EFC2;
+  border:2px solid #C6D880;
+  color: #264409 !important;
+  text-decoration:none;
+}
+.button:hover{
+  background:#264409 !important;
+  color:#fff !important;
 }
