@@ -2,11 +2,11 @@
 <% content_for :body_content_left do %>
   
   <div id="venue_name">
-    <%=raw @venue.name %>
+    <%= @venue.name %> <%= link_to 'edit', edit_venue_path %>
   </div>
   
   <div>
-    <%= link_to raw(@venue.address), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(raw @venue.address)}&ie=UTF8&z=16", :class => 'map_link' %>
+    <%= link_to @venue.address, "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(raw @venue.address)}&ie=UTF8&z=16", :class => 'map_link' %>
   </div>
   
   

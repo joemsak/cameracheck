@@ -20,13 +20,26 @@ class VenuesController < ApplicationController
   def new
     @venue = Venue.new
   end
-
+  
+  def edit
+    @venue = Venue.find(params[:id])
+  end
+  
   def create
     @venue = Venue.new(params[:venue])
     if @venue.save
       redirect_to @venue, :notice => '<div class="success">Thanks for submitting a new venue. <strong>You rock.</strong></div>'
     else
       render :new
+    end
+  end
+  
+  def update
+    @venue = Venue.find(params[:id])
+    if @venue.update_attributes(params[:venue])
+      redirect_to @venue, :notice => '<div class="success">Thanks for fixing the venue information. <strong>You rock.</strong></div>'
+    else
+      render :edit
     end
   end
 
