@@ -18,3 +18,12 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end unless defined?(Rails)
+
+def it_requires(*attrs)
+  attrs.each do |attr|
+    it "requires #{attr}" do
+      subject.valid?
+      subject.errors[attr].should include("can't be blank")
+    end
+  end
+end
