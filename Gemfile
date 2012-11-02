@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'geocoder'
 
 gem 'pg'
 
@@ -14,5 +15,10 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'database_cleaner'
 end
