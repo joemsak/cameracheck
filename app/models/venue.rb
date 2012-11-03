@@ -3,13 +3,7 @@ class Venue < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  geocoded_by         :name_and_city
-  reverse_geocoded_by :latitude, :longitude
+  include AddressLookup::Yelp
+  lookup_address_by :name
 
-  after_validation :geocode
-  after_validation :reverse_geocode
-
-  def name_and_city
-    "#{name} New York"
-  end
 end

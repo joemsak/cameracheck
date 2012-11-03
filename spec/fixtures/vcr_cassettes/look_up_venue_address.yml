@@ -2,355 +2,394 @@
 http_interactions:
 - request:
     method: get
-    uri: http://maps.googleapis.com/maps/api/geocode/json?address=Majestic%20Theatre%20New%20York&language=en&sensor=false
+    uri: http://api.yelp.com/business_review_search?location=New%20York%20NY&radius=2&term=Majestic%20Theatre&ywsid=mpYJLNJN2Ma6pqDOeOn5vQ
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - yelp for Ruby (http://www.rubyforge.org/projects/yelp/)
       Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      - gzip,deflate
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
-      message: OK
+      message: !binary |-
+        T0s=
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 02 Nov 2012 21:02:00 GMT
-      Expires:
-      - Sat, 03 Nov 2012 21:02:00 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Transfer-Encoding:
-      - chunked
+      !binary "RGF0ZQ==":
+      - !binary |-
+        U2F0LCAwMyBOb3YgMjAxMiAxNTo1NzowNiBHTVQ=
+      !binary "U2VydmVy":
+      - !binary |-
+        QXBhY2hl
+      !binary "WC1Ob2Rl":
+      - !binary |-
+        d3NnaSwgd2ViMzcsIGFwaV9jb20=
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZQ==
+      !binary "U2V0LUNvb2tpZQ==":
+      - !binary |-
+        YnNlPTYyMDM1ODBhZWUzNzUyY2YyMWI2NWVjYzliM2JhNzA2OyBEb21haW49
+        LnllbHAuY29tOyBQYXRoPS87IEh0dHBPbmx5
+      !binary "VmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOA==
+      !binary "WC1Nb2Rl":
+      - !binary |-
+        cnc=
+      !binary "WC1Qcm94aWVk":
+      - !binary |-
+        bGIy
     body:
-      encoding: US-ASCII
-      string: ! "{\n   \"results\" : [\n      {\n         \"address_components\" :
-        [\n            {\n               \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"New York\",\n               \"types\" : [ \"locality\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"New York\",\n
-        \              \"short_name\" : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\",
-        \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"United States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"New York, NY, USA\",\n         \"geometry\" : {\n            \"bounds\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.91524140,\n
-        \                 \"lng\" : -73.70027209999999\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.4959080,\n                  \"lng\" :
-        -74.25908790\n               }\n            },\n            \"location\" :
-        {\n               \"lat\" : 40.71435280,\n               \"lng\" : -74.00597309999999\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.91524140,\n
-        \                 \"lng\" : -73.70027209999999\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.4959080,\n                  \"lng\" :
-        -74.25573489999999\n               }\n            }\n         },\n         \"types\"
-        : [ \"locality\", \"political\" ]\n      },\n      {\n         \"address_components\"
-        : [\n            {\n               \"long_name\" : \"Manhattan\",\n               \"short_name\"
-        : \"Manhattan\",\n               \"types\" : [ \"sublocality\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"New York\",\n
-        \              \"short_name\" : \"New York\",\n               \"types\" :
-        [ \"locality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"Manhattan, New York, NY, USA\",\n         \"geometry\" : {\n            \"bounds\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.8822140,\n
-        \                 \"lng\" : -73.9070\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.67954790,\n                  \"lng\" :
-        -74.0472850\n               }\n            },\n            \"location\" :
-        {\n               \"lat\" : 40.78414840,\n               \"lng\" : -73.96614070\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.8200450,\n
-        \                 \"lng\" : -73.90331300000001\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.6980780,\n                  \"lng\" :
-        -74.03514899999999\n               }\n            }\n         },\n         \"types\"
-        : [ \"sublocality\", \"political\" ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        UNwfZd1TZ9B6h07Al393mfDiX0ZyfJp0iUBuRFoIPkdyJEQhrvD/Jjk+FEzl
+        thU/xc7yT/zK5ncL3q3F98n7IzlK/bki1/tz01y06n5uKY+7CXMTwat71x4D
+        P2w+Y5N1URxv2M569hRPbqxCqp6keHfvjvnay6OP/trLK35fo4gJojDksHAB
+        xrC9B+JtEU9vg/w49CvNZTQMTLR3HNa2McIoswzWX7w8ugwZDa6Rt4iHfEQo
+        tjxmo6OtaIK2EzyGbTE891PkCccBkH+JPicIj0ch11/Hd1Bs8FJgxrPcOd+R
+        Qia3Y3pHzhxlQu+U8PifTkRGxGjiaW5MYGY3fNqssgOuqgv1Wmt6K4zSRz/D
+        KKETL3oWjwxT9HBEZe6QS71GTpuHgjbf1VVg4AsB5kt0E2NVBWjaQmqS/Dwc
+        x0XbnovHQSjXgqUALwF4gJfYDF988f2/Fi9JmdM7hWlqWi3vYQGKZcWb9pdL
+        dqFu4vcH067TmvfTKzMJFw2f0yfF3jw+vOFWKtfk+VhMm6W2stskLJbLCjmZ
+        RpR8GKb00V/DtK2bS8xcWAxcovBsaYDdI1M9wuURHjHXodnWd8yZ6NYCA8rB
+        Ox/6Ndk+xwiiZAT0G+CREwfVtjy84WLsTR0URWEFQwBGHe+r8BFTog0DApfs
+        6IzuPeIYkXFV27nyAIFiiZGZzvYMINchfYRUyrRGYUc+GsNFZkduhZi32JFx
+        Pi/NXT1b9VZGt8/xKafupG/OjrjA9KHBzlnsdmnIrWLDs6m36BHhE+RILM49
+        H/BHJ0duu8aeqD1kHpMfyr+o2kPmcfSo/D5a5CkWs4o1Nb0T8gN+vRzJii5z
+        F2kRUVJivCRfUnu0iTUyJSYXWmNAXTnw37KPXyn7iLYIvEONSBT9h6y8SHuk
+        21Aj7xv3nVMj03FhyhVHfa+yqY12fizfGixym7vz5xRjxYH6uL6Z5cy60jCG
+        6fFGi3Lg9b5BBi7XvrqKKb7f2OZLQ63NSzWNq1C5kfcHfe3R0Yd/7dFVO+nv
+        +KjLCg+LD6FPCi34JnKqflJXNhySrXzs9OmW6qCPb2wgn++fVpKoRlCIhnYW
+        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
     http_version: 
-  recorded_at: Fri, 02 Nov 2012 21:02:01 GMT
-- request:
-    method: get
-    uri: http://maps.googleapis.com/maps/api/geocode/json?language=en&latlng=40.7143528,-74.00597309999999&sensor=false
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 02 Nov 2012 21:02:00 GMT
-      Expires:
-      - Sat, 03 Nov 2012 21:02:00 GMT
-      Cache-Control:
-      - public, max-age=86400
-      Server:
-      - mafe
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: US-ASCII
-      string: ! "{\n   \"results\" : [\n      {\n         \"address_components\" :
-        [\n            {\n               \"long_name\" : \"278\",\n               \"short_name\"
-        : \"278\",\n               \"types\" : [ \"street_number\" ]\n            },\n
-        \           {\n               \"long_name\" : \"Broadway\",\n               \"short_name\"
-        : \"Broadway\",\n               \"types\" : [ \"route\" ]\n            },\n
-        \           {\n               \"long_name\" : \"Lower Manhattan\",\n               \"short_name\"
-        : \"Lower Manhattan\",\n               \"types\" : [ \"neighborhood\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"Manhattan\",\n
-        \              \"short_name\" : \"Manhattan\",\n               \"types\" :
-        [ \"sublocality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"locality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"10007\",\n               \"short_name\" : \"10007\",\n               \"types\"
-        : [ \"postal_code\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"278 Broadway, New York, NY 10007, USA\",\n         \"geometry\" : {\n
-        \           \"location\" : {\n               \"lat\" : 40.71423370,\n               \"lng\"
-        : -74.00603720000001\n            },\n            \"location_type\" : \"ROOFTOP\",\n
-        \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
-        : 40.71558268029150,\n                  \"lng\" : -74.00468821970851\n               },\n
-        \              \"southwest\" : {\n                  \"lat\" : 40.71288471970851,\n
-        \                 \"lng\" : -74.00738618029152\n               }\n            }\n
-        \        },\n         \"types\" : [ \"street_address\" ]\n      },\n      {\n
-        \        \"address_components\" : [\n            {\n               \"long_name\"
-        : \"Broadway - Reade St\",\n               \"short_name\" : \"Broadway - Reade
-        St\",\n               \"types\" : [ \"bus_station\", \"transit_station\",
-        \"establishment\" ]\n            },\n            {\n               \"long_name\"
-        : \"Lower Manhattan\",\n               \"short_name\" : \"Lower Manhattan\",\n
-        \              \"types\" : [ \"neighborhood\", \"political\" ]\n            },\n
-        \           {\n               \"long_name\" : \"Manhattan\",\n               \"short_name\"
-        : \"Manhattan\",\n               \"types\" : [ \"sublocality\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"New York\",\n
-        \              \"short_name\" : \"New York\",\n               \"types\" :
-        [ \"locality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"10007\",\n               \"short_name\" : \"10007\",\n               \"types\"
-        : [ \"postal_code\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"Broadway - Reade St, New York, NY 10007, USA\",\n         \"geometry\"
-        : {\n            \"location\" : {\n               \"lat\" : 40.7148250,\n
-        \              \"lng\" : -74.0058750\n            },\n            \"location_type\"
-        : \"APPROXIMATE\",\n            \"viewport\" : {\n               \"northeast\"
-        : {\n                  \"lat\" : 40.71617398029150,\n                  \"lng\"
-        : -74.00452601970849\n               },\n               \"southwest\" : {\n
-        \                 \"lat\" : 40.71347601970850,\n                  \"lng\"
-        : -74.00722398029151\n               }\n            }\n         },\n         \"types\"
-        : [ \"bus_station\", \"transit_station\", \"establishment\" ]\n      },\n
-        \     {\n         \"address_components\" : [\n            {\n               \"long_name\"
-        : \"Civic Center\",\n               \"short_name\" : \"Civic Center\",\n               \"types\"
-        : [ \"neighborhood\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"Manhattan\",\n               \"short_name\" : \"Manhattan\",\n               \"types\"
-        : [ \"sublocality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"locality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"Civic Center, New York, NY, USA\",\n         \"geometry\" : {\n            \"bounds\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.71776149999999,\n
-        \                 \"lng\" : -73.99821990\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.70977560,\n                  \"lng\" :
-        -74.00873419999999\n               }\n            },\n            \"location\"
-        : {\n               \"lat\" : 40.71405190,\n               \"lng\" : -74.00283639999999\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.71776149999999,\n
-        \                 \"lng\" : -73.99821990\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.70977560,\n                  \"lng\" :
-        -74.00873419999999\n               }\n            }\n         },\n         \"types\"
-        : [ \"neighborhood\", \"political\" ]\n      },\n      {\n         \"address_components\"
-        : [\n            {\n               \"long_name\" : \"10007\",\n               \"short_name\"
-        : \"10007\",\n               \"types\" : [ \"postal_code\" ]\n            },\n
-        \           {\n               \"long_name\" : \"Lower Manhattan\",\n               \"short_name\"
-        : \"Lower Manhattan\",\n               \"types\" : [ \"neighborhood\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"Manhattan\",\n
-        \              \"short_name\" : \"Manhattan\",\n               \"types\" :
-        [ \"sublocality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"locality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"New York, NY 10007, USA\",\n         \"geometry\" : {\n            \"bounds\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.71737210,\n
-        \                 \"lng\" : -74.0004550\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.7098060,\n                  \"lng\" :
-        -74.01375399999999\n               }\n            },\n            \"location\"
-        : {\n               \"lat\" : 40.71364870,\n               \"lng\" : -74.00871260\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.71737210,\n
-        \                 \"lng\" : -74.0004550\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.7098060,\n                  \"lng\" :
-        -74.01375399999999\n               }\n            }\n         },\n         \"types\"
-        : [ \"postal_code\" ]\n      },\n      {\n         \"address_components\"
-        : [\n            {\n               \"long_name\" : \"Lower Manhattan\",\n
-        \              \"short_name\" : \"Lower Manhattan\",\n               \"types\"
-        : [ \"neighborhood\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"Manhattan\",\n               \"short_name\" : \"Manhattan\",\n               \"types\"
-        : [ \"sublocality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"locality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"Lower Manhattan, New York, NY, USA\",\n         \"geometry\" : {\n            \"bounds\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.74252630,\n
-        \                 \"lng\" : -73.97164459999999\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.70046310,\n                  \"lng\" :
-        -74.01933500000001\n               }\n            },\n            \"location\"
-        : {\n               \"lat\" : 40.72300840,\n               \"lng\" : -74.00063279999999\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.74252630,\n
-        \                 \"lng\" : -73.97164459999999\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.70046310,\n                  \"lng\" :
-        -74.01933500000001\n               }\n            }\n         },\n         \"types\"
-        : [ \"neighborhood\", \"political\" ]\n      },\n      {\n         \"address_components\"
-        : [\n            {\n               \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"New York\",\n               \"types\" : [ \"administrative_area_level_2\",
-        \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"NY\",\n               \"types\"
-        : [ \"administrative_area_level_1\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"United States\",\n               \"short_name\"
-        : \"US\",\n               \"types\" : [ \"country\", \"political\" ]\n            }\n
-        \        ],\n         \"formatted_address\" : \"New York, NY, USA\",\n         \"geometry\"
-        : {\n            \"bounds\" : {\n               \"northeast\" : {\n                  \"lat\"
-        : 40.87927790,\n                  \"lng\" : -73.9070\n               },\n
-        \              \"southwest\" : {\n                  \"lat\" : 40.67983780,\n
-        \                 \"lng\" : -74.04725999999999\n               }\n            },\n
-        \           \"location\" : {\n               \"lat\" : 40.78306030,\n               \"lng\"
-        : -73.97124880\n            },\n            \"location_type\" : \"APPROXIMATE\",\n
-        \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
-        : 40.87927790,\n                  \"lng\" : -73.9070\n               },\n
-        \              \"southwest\" : {\n                  \"lat\" : 40.67983780,\n
-        \                 \"lng\" : -74.04725999999999\n               }\n            }\n
-        \        },\n         \"types\" : [ \"administrative_area_level_2\", \"political\"
-        ]\n      },\n      {\n         \"address_components\" : [\n            {\n
-        \              \"long_name\" : \"Manhattan\",\n               \"short_name\"
-        : \"Manhattan\",\n               \"types\" : [ \"sublocality\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"New York\",\n
-        \              \"short_name\" : \"New York\",\n               \"types\" :
-        [ \"locality\", \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"New York\",\n               \"short_name\" : \"New York\",\n               \"types\"
-        : [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
-        \              \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"Manhattan, New York, NY, USA\",\n         \"geometry\" : {\n            \"bounds\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.8822140,\n
-        \                 \"lng\" : -73.9070\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.67954790,\n                  \"lng\" :
-        -74.0472850\n               }\n            },\n            \"location\" :
-        {\n               \"lat\" : 40.78414840,\n               \"lng\" : -73.96614070\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.8200450,\n
-        \                 \"lng\" : -73.90331300000001\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.6980780,\n                  \"lng\" :
-        -74.03514899999999\n               }\n            }\n         },\n         \"types\"
-        : [ \"sublocality\", \"political\" ]\n      },\n      {\n         \"address_components\"
-        : [\n            {\n               \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"New York\",\n               \"types\" : [ \"locality\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"New York\",\n
-        \              \"short_name\" : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\",
-        \"political\" ]\n            },\n            {\n               \"long_name\"
-        : \"United States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"New York, NY, USA\",\n         \"geometry\" : {\n            \"bounds\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.91524140,\n
-        \                 \"lng\" : -73.70027209999999\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.4959080,\n                  \"lng\" :
-        -74.25908790\n               }\n            },\n            \"location\" :
-        {\n               \"lat\" : 40.71435280,\n               \"lng\" : -74.00597309999999\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 40.91524140,\n
-        \                 \"lng\" : -73.70027209999999\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.4959080,\n                  \"lng\" :
-        -74.25573489999999\n               }\n            }\n         },\n         \"types\"
-        : [ \"locality\", \"political\" ]\n      },\n      {\n         \"address_components\"
-        : [\n            {\n               \"long_name\" : \"New York\",\n               \"short_name\"
-        : \"NY\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
-        ]\n            },\n            {\n               \"long_name\" : \"United
-        States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"New York, USA\",\n         \"geometry\" : {\n            \"bounds\" :
-        {\n               \"northeast\" : {\n                  \"lat\" : 45.0158650,\n
-        \                 \"lng\" : -71.85626990\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.49594540,\n                  \"lng\" :
-        -79.76214379999999\n               }\n            },\n            \"location\"
-        : {\n               \"lat\" : 43.29942850,\n               \"lng\" : -74.21793260000001\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 45.01261130,\n
-        \                 \"lng\" : -71.85626990\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 40.49594540,\n                  \"lng\" :
-        -79.76214379999999\n               }\n            }\n         },\n         \"types\"
-        : [ \"administrative_area_level_1\", \"political\" ]\n      },\n      {\n
-        \        \"address_components\" : [\n            {\n               \"long_name\"
-        : \"United States\",\n               \"short_name\" : \"US\",\n               \"types\"
-        : [ \"country\", \"political\" ]\n            }\n         ],\n         \"formatted_address\"
-        : \"United States\",\n         \"geometry\" : {\n            \"bounds\" :
-        {\n               \"northeast\" : {\n                  \"lat\" : 71.3898880,\n
-        \                 \"lng\" : -66.94976079999999\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 18.91106420,\n                  \"lng\" :
-        172.45469660\n               }\n            },\n            \"location\" :
-        {\n               \"lat\" : 37.090240,\n               \"lng\" : -95.7128910\n
-        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
-        : {\n               \"northeast\" : {\n                  \"lat\" : 49.380,\n
-        \                 \"lng\" : -66.940\n               },\n               \"southwest\"
-        : {\n                  \"lat\" : 25.820,\n                  \"lng\" : -124.390\n
-        \              }\n            }\n         },\n         \"types\" : [ \"country\",
-        \"political\" ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
-    http_version: 
-  recorded_at: Fri, 02 Nov 2012 21:02:02 GMT
+  recorded_at: Sat, 03 Nov 2012 15:57:09 GMT
 recorded_with: VCR 2.2.5
