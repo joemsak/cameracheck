@@ -1,0 +1,32 @@
+label {
+  display: block;
+}
+
+#new_venue input[type='submit'] {
+  border: 1px solid #333;
+  padding: 10px;
+  font-size: 15px;
+  background: #fff;
+  cursor: pointer;
+  &:hover {
+    background: #d1d7fa;
+  }
+}
+
+#venue_name {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+#spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  background: url('/assets/spinner.gif') no-repeat;
+}
+
+.loading #spinner {
+  display: block;
+}
