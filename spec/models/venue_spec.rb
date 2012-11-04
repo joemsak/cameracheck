@@ -4,11 +4,9 @@ require 'spec_helper'
 describe Venue do
 
   it "requires a name" do
-    VCR.use_cassette('check validity???') do
-      venue = Venue.new(:name => nil)
-      venue.valid?
-      venue.errors[:name].should include("can't be blank")
-    end
+    venue = Venue.new(:name => nil)
+    venue.valid?
+    venue.errors[:name].should include("can't be blank")
   end
 
   it "looks up the address" do
