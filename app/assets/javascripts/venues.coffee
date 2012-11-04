@@ -5,4 +5,7 @@ jQuery ->
 
   $('.cancel').click (e)->
     e.preventDefault()
-    $(this).closest('form').removeClass('active')
+    $(this).closest('form')
+             .removeClass('active')
+             .find('input')
+             .attr('readonly', true)
