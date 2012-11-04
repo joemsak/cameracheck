@@ -41,7 +41,12 @@ label {
   display: none;
   width: 16px;
   height: 16px;
-  background: url('/assets/spinner.gif') no-repeat;
+  &.white {
+    background: url('/assets/spinner-white.gif') no-repeat;
+  }
+  &.pink {
+    background: url('/assets/spinner-pink.gif') no-repeat;
+  }
 }
 
 .loading .spinner {
