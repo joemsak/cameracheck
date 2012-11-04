@@ -1,0 +1,13 @@
+<% if @venue.save %>
+  html = "<%= escape_javascript(render(Venue.all)) %>";
+
+  $('#venues').fadeOut('fast', function(){
+    $(this).html(html).fadeIn();
+  });
+
+  $('#venue_name').val('');
+<% else %>
+  $('#venue_name').css('background', '#fbd1d7');
+<% end %>
+
+$('#new_venue').removeClass('loading');
