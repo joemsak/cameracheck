@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'yelpster'
+gem 'newrelic_rpm'
 
 gem 'pg'
 
@@ -21,4 +22,8 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'database_cleaner'
+end
+
+group :production do
+  gem 'unicorn'
 end
