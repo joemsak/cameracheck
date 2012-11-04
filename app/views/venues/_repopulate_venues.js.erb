@@ -1,4 +1,4 @@
-html = "<%= escape_javascript(render(Venue.all)) %>";
+html = "<%= escape_javascript(render(all_venues)) %>";
 
 $('#venues').fadeOut('fast', function(){
   $(this).html(html).fadeIn();

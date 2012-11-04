@@ -39,6 +39,16 @@ class VenuesController < ApplicationController
   def check_for_venue_params
     raise MustPassVenueParams unless params[:venue]
   end
+
+  def new_venue
+    @new_venue ||= Venue.new
+  end
+  helper_method :new_venue
+
+  def all_venues
+    @all_venues ||= Venue.all
+  end
+  helper_method :all_venues
 end
 
 class MustPassVenueParams < Exception
