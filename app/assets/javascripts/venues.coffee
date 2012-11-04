@@ -3,7 +3,7 @@ jQuery ->
     $(this).find('input').css('background', 'inherit')
     $(this).addClass('loading')
 
-  $('.cancel').click (e)->
+  $(document).on 'click', '.cancel', (e)->
     e.preventDefault()
     $(this).closest('form')
              .removeClass('active')
