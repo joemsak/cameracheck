@@ -5,6 +5,9 @@
   width: 25%;
   min-width: 255px;
   display: inline-block;
+  &:hover {
+    background: #f9a4dd;
+  }
   #venue_name {
     font-size: 20px;
     font-weight: bold;
