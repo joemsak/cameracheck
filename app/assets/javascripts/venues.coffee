@@ -1,11 +1,11 @@
 jQuery ->
-  $('form').submit ->
+  $(document).on('submit', 'form', ->
     $(this).find('input').css('background', 'inherit')
     $(this).addClass('loading')
-
-  $(document).on 'click', '.cancel', (e)->
+  ).on 'click', '.cancel', (e)->
     e.preventDefault()
     $(this).closest('form')
              .removeClass('active')
              .find('input')
+             .css('background', 'inherit')
              .attr('readonly', true)
