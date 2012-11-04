@@ -1,0 +1,7 @@
+<% if @venue.save %>
+  <%= render 'repopulate_venues' %>
+<% else %>
+  $('#edit_venue_<%= @venue.id %> #venue_name').css('background', '#fbd1d7');
+<% end %>
+
+$('#edit_venue_<%= @venue.id %>').removeClass('loading');

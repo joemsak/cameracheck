@@ -1,0 +1,7 @@
+html = "<%= escape_javascript(render(Venue.all)) %>";
+
+$('#venues').fadeOut('fast', function(){
+  $(this).html(html).fadeIn();
+});
+
+$('#venue_name').val('');

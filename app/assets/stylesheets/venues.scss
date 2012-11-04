@@ -13,20 +13,51 @@ label {
   }
 }
 
-#venue_name {
+#new_venue #venue_name {
   padding: 10px;
   font-size: 16px;
   font-weight: bold;
   color: #333;
 }
 
-#spinner {
+.spinner {
   display: none;
   width: 16px;
   height: 16px;
   background: url('/assets/spinner.gif') no-repeat;
 }
 
-.loading #spinner {
+.loading .spinner {
   display: block;
+}
+
+.edit_venue {
+  input {
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+    &[type='text'] {
+      width: 400px;
+    }
+    &[type='submit'] {
+      display: none;
+    }
+  }
+  .cancel {
+    display: none;
+  }
+
+  &.active {
+    input {
+      padding: 5px;
+      border: 1px solid #333;
+      display: inherit;
+    }
+    .cancel {
+      display: block;
+    }
+    .edit {
+      display: none;
+    }
+  }
 }
