@@ -1,8 +1,10 @@
-<%= form_for venue, :remote => true do |f| %>
-  <p><%= f.text_field :name, :readonly => true %></p>
-  <p><%= f.text_field :address,  :readonly => true%></p>
-  <p><%= f.submit %></p>
-  <p><%= link_to 'edit', edit_venue_path(venue), :remote => true, :class => 'edit' %></p>
-  <p><%= link_to 'cancel', '#', :class => 'cancel' %></p>
-  <div class='spinner'></div>
+<%= div_for venue do %>
+  <%= form_for venue, :remote => true do |f| %>
+    <p><%= f.text_field :name, :readonly => true %></p>
+    <p><%= f.text_field :address,  :readonly => true%></p>
+    <p><%= f.submit %></p>
+    <p><%= link_to 'edit', edit_venue_path(venue), :remote => true, :class => 'edit' %></p>
+    <p><%= link_to 'cancel', '#', :class => 'cancel' %></p>
+    <div class='spinner'></div>
+  <% end %>
 <% end %>
