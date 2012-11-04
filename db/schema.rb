@@ -11,13 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104185705) do
+ActiveRecord::Schema.define(:version => 20121104190100) do
 
   create_table "options", :force => true do |t|
     t.string   "text",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "options", ["text"], :name => "index_options_on_text"
+
+  create_table "options_venues", :force => true do |t|
+    t.integer  "option_id"
+    t.integer  "venue_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "options_venues", ["option_id"], :name => "index_options_venues_on_option_id"
+  add_index "options_venues", ["venue_id"], :name => "index_options_venues_on_venue_id"
 
   create_table "venues", :force => true do |t|
     t.string "name",      :null => false
