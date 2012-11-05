@@ -1,0 +1,15 @@
+<%= form_for venue, :remote => true do |f| %>
+  <div class='field'>
+    <%= f.label :name if venue.new_record? %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= render 'options/option_fields', :f => f %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <div class="spinner <%= color %>"></div>
+<% end %>
+

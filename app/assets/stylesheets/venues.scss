@@ -13,6 +13,41 @@
     font-size: 20px;
     font-weight: bold;
   }
+  a {
+    display: block;
+    padding: 5px;
+    margin: 5px 0;
+    &.cancel {
+      display: none;
+    }
+  }
+  input {
+    &[type='text'] {
+      width: 100%;
+      border: 0;
+      padding: 0;
+      font-size: 14px;
+      background: inherit;
+    }
+    &[type='submit'] {
+      display: none;
+    }
+  }
+  &.active {
+    input[type='text'] {
+      padding: 5px 0;
+      border: 1px solid #333;
+    }
+    input[type='submit'] {
+      display: inherit;
+    }
+    .cancel {
+      display: block;
+    }
+    .edit {
+      display: none;
+    }
+  }
 }
 
 label {
@@ -51,38 +86,4 @@ label {
 
 .loading .spinner {
   display: block;
-}
-
-.edit_venue {
-  input {
-    &[type='text'] {
-      width: 100%;
-      border: 0;
-      padding: 0;
-      font-size: 14px;
-      background: inherit;
-    }
-    &[type='submit'] {
-      display: none;
-    }
-  }
-  .cancel {
-    display: none;
-  }
-
-  &.active {
-    input[type='text'] {
-      padding: 5px 0;
-      border: 1px solid #333;
-    }
-    input[type='submit'] {
-      display: inherit;
-    }
-    .cancel {
-      display: block;
-    }
-    .edit {
-      display: none;
-    }
-  }
 }

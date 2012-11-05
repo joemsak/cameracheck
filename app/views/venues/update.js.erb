@@ -1,7 +1,2 @@
-<% if @venue.save %>
-  <%= render 'repopulate_venues' %>
-<% else %>
-  $('#edit_venue_<%= @venue.id %> #venue_name').css('background', '#fbd1d7');
-<% end %>
-
-$('#edit_venue_<%= @venue.id %>').removeClass('loading');
+<% form_id = "edit_venue_#{@venue.id}" %>
+<%= render 'repopulate_venues', :form_id => form_id %>

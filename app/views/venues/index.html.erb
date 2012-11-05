@@ -1,15 +1,5 @@
-<%= form_for new_venue, :remote => true do |f| %>
-  <h1>Add a venue</h1>
-
-  <div class='field'>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <p>
-    <%= f.submit %>
-  </p>
-  <div class="spinner white"></div>
-<% end %>
+<h1>Add a venue</h1>
+<%= render 'form', :venue => new_venue, :color => 'white' %>
 
 <div id="venues">
   <%= render @venues %>

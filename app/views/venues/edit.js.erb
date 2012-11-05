@@ -1,2 +1,3 @@
-$('#edit_venue_<%= @venue.id %>').addClass('active')
-                                 .find('input').removeAttr('readonly');
+$('#venue_<%= @venue.id %>').addClass('active')
+                            .find('input')
+                            .removeAttr('readonly');

@@ -1,7 +1,8 @@
+<% form_id ||= 'new_venue' %>
 html = "<%= escape_javascript(render(all_venues)) %>";
 
 $('#venues').fadeOut('fast', function(){
   $(this).html(html).fadeIn();
 });
 
-$('#venue_name').val('');
+$("#<%= form_id %>").removeClass('loading');

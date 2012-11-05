@@ -1,0 +1,8 @@
+<div class='fields'>
+  <h2>Options</h2>
+  <%= f.fields_for :options do |o| %>
+    <div class='field'>
+      <%= render 'options/option', :o => o %>
+    </div>
+  <% end %>
+</div>
