@@ -1,10 +1,10 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.all
+    @venues = Venue.includes(:options).all
   end
 
   def show
-    @venue = Venue.find(params[:id])
+    @venue = Venue.includes(:options).find(params[:id])
     build_option
   end
   alias :edit :show
