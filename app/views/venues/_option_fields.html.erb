@@ -1,0 +1,18 @@
+<fieldset class='options fields<%= ' hide' unless parent_form.object.options.include?(f.object) %>'>
+  <div class="field">
+    <% if f.object.new_record? %>
+      <%= f.text_field :text, :placeholder => 'Note e.g., Flash OK' %>
+      <%= link_to "&times;".html_safe, '#', :class => "remove_fields" %>
+    <% else %>
+      <label>
+        <%= check_box_tag "venue[option_ids][]",
+                          f.object.id,
+                          parent_form.object.options.include?(f.object),
+                          :id       => "venue_option_ids_#{f.object.id}",
+                          :disabled => parent_form.object.persisted? %>
+
+        <%= f.object.text %>
+      </label>
+    <% end %>
+  </div>
+</fieldset>

@@ -4,4 +4,5 @@
   $('#venue_name').css('background', '#fbd1d7');
 <% end %>
 
-$('#new_venue input[type=text]').val('');
+$("#new_venue").removeClass('loading')
+               .find('input[type=text]').val('');

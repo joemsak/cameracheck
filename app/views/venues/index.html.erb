@@ -1,5 +1,9 @@
-<h1>Add a venue</h1>
-<%= render 'form', :venue => new_venue, :color => 'white' %>
+<div id="sidebar">
+  <h1>Add a venue</h1>
+  <div id="new_venue_form">
+    <%= render 'form' %>
+  </div>
+</div>
 
 <div id="venues">
   <%= render @venues %>

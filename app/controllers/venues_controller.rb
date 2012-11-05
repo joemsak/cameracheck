@@ -18,13 +18,14 @@ class VenuesController < ApplicationController
   end
 
   def update
-    @venue = Venue.find(params[:id])
+    params[:venue][:option_ids] ||= []
+    @venue = Venue.includes(:options).find(params[:id])
     respond_to do |format|
       format.js do
         if @venue.update_attributes(params[:venue])
           render :update
         else
-          render :failure
+          render :nothing => true, :status => 403
         end
       end
     end
@@ -39,9 +40,14 @@ class VenuesController < ApplicationController
   helper_method :new_venue
 
   def all_venues
-    @all_venues ||= Venue.all
+    @all_venues ||= Venue.includes(:options).all
   end
   helper_method :all_venues
+
+  def all_options
+    @all_options ||= Option.includes(:venues).all
+  end
+  helper_method :all_options
 
   def build_option(venue = @venue)
     venue.options.build

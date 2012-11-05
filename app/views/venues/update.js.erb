@@ -1,2 +1,2 @@
-<% form_id = "edit_venue_#{@venue.id}" %>
-<%= render 'repopulate_venues', :form_id => form_id %>
+<%= render 'repopulate_venues' %>
+$("#edit_venue_<%= @venue.id %>").removeClass('loading');

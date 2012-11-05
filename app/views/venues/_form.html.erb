@@ -1,10 +1,26 @@
+<% venue ||= new_venue
+   color ||= 'white' %>
+
 <%= form_for venue, :remote => true do |f| %>
   <div class='field'>
     <%= f.label :name if venue.new_record? %>
     <%= f.text_field :name %>
   </div>
 
-  <%= render 'options/option_fields', :f => f %>
+  <% if venue.persisted? %>
+    <div class='field'>
+      <%= f.text_field :address %>
+    </div>
+  <% end %>
+
+  <h2>Notes</h2>
+  <% all_options.each do |option| %>
+    <%= f.fields_for option do |o| %>
+      <%= render 'option_fields', :f => o, :parent_form => f %>
+    <% end %>
+  <% end %>
+
+  <%= link_to_add_fields "Add Note", f, :options %>
 
   <p>
     <%= f.submit %>
@@ -12,4 +28,3 @@
 
   <div class="spinner <%= color %>"></div>
 <% end %>
-

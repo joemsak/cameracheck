@@ -1,3 +1,5 @@
 $('#venue_<%= @venue.id %>').addClass('active')
                             .find('input')
+                            .show()
+                            .removeAttr('disabled')
                             .removeAttr('readonly');

@@ -5,21 +5,17 @@
   width: 25%;
   min-width: 255px;
   display: inline-block;
-  &:hover {
-    background: #f9a4dd;
-    border-color: #f9a4dd;
-  }
-  #venue_name {
-    font-size: 20px;
-    font-weight: bold;
-  }
   a {
     display: block;
     padding: 5px;
     margin: 5px 0;
-    &.cancel {
+    &.cancel, &.add_fields, &.remove_fields {
       display: none;
     }
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: normal;
   }
   input {
     &[type='text'] {
@@ -33,6 +29,9 @@
       display: none;
     }
   }
+  .hide {
+    display: none;
+  }
   &.active {
     input[type='text'] {
       padding: 5px 0;
@@ -41,17 +40,17 @@
     input[type='submit'] {
       display: inherit;
     }
-    .cancel {
+    .cancel, .add_fields, .remove_fields, .hide {
       display: block;
     }
     .edit {
       display: none;
     }
   }
-}
-
-label {
-  display: block;
+  &:hover {
+    background: #f9a4dd;
+    border-color: #f9a4dd;
+  }
 }
 
 #new_venue input[type='submit'] {
@@ -65,25 +64,14 @@ label {
   }
 }
 
-#new_venue #venue_name {
+#venue_name {
   padding: 10px;
   font-size: 16px;
   font-weight: bold;
   color: #333;
 }
 
-.spinner {
-  display: none;
-  width: 16px;
-  height: 16px;
-  &.white {
-    background: url('/assets/spinner-white.gif') no-repeat;
-  }
-  &.pink {
-    background: url('/assets/spinner-pink.gif') no-repeat;
-  }
-}
-
-.loading .spinner {
-  display: block;
+.venue  #venue_name {
+  font-size: 20px;
+  font-weight: bold;
 }
