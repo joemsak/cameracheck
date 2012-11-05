@@ -13,12 +13,13 @@
     </div>
   <% end %>
 
-  <h2>Notes</h2>
-  <% all_options.each do |option| %>
-    <%= f.fields_for option do |o| %>
-      <%= render 'option_fields', :f => o, :parent_form => f %>
+  <div class="option_fields">
+    <% all_options.each do |option| %>
+      <%= f.fields_for option do |o| %>
+        <%= render 'option_fields', :f => o, :parent_form => f %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 
   <%= link_to_add_fields "Add Note", f, :options %>
 
