@@ -32,10 +32,8 @@ ActiveRecord::Schema.define(:version => 20121104190100) do
   add_index "options_venues", ["venue_id"], :name => "index_options_venues_on_venue_id"
 
   create_table "venues", :force => true do |t|
-    t.string "name",      :null => false
+    t.string "name",    :null => false
     t.string "address"
-    t.float  "latitude"
-    t.float  "longitude"
   end
 
 end
