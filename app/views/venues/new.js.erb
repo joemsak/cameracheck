@@ -1,1 +1,10 @@
-$('#sidebar').toggle();
+$add_venue = $('#add_venue');
+$sidebar   = $('#sidebar');
+
+$sidebar.toggle();
+
+if($sidebar.is(':visible')) {
+  $add_venue.text('cancel');
+} else {
+  $add_venue.text('Add venue');
+}
