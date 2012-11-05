@@ -6,6 +6,11 @@
   Formatting applies to all frontend.
 */
 
+#beta-link {
+  font-size: 30px;
+  color: magenta !important;
+}
+
 body{
 	background: #333;
 }

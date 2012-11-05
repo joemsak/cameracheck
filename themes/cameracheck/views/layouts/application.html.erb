@@ -8,7 +8,7 @@
         <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
         <div id='header'>
           <%= render :partial => "/shared/header" %>
-          <p><%= link_to 'See the new beta site', 'http://cameracheck-beta.herokuapp.com' %></p>
+          <p><%= link_to 'See the new beta site', 'http://cameracheck-beta.herokuapp.com', :id => 'beta-link' %></p>
         </div>
         <div id='body' class='clearfix'>
           <%=raw flash[:notice] %>
