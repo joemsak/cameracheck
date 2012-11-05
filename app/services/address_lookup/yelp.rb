@@ -1,6 +1,6 @@
 module AddressLookup
   module Yelp
-    mattr_accessor :api_key
+    mattr_accessor :api_key, :client
 
     def self.included(base)
       base.extend ClassMethods
@@ -41,7 +41,7 @@ module AddressLookup
     def find_address_by(field)
       term     = send(field)
       request  = self.class.request(:term => term)
-      response = YELP_CLIENT.search(request)
+      response = Yelp.client.search(request)
 
       if business = response['businesses'].first
         build_address(business)
