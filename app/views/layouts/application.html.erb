@@ -6,9 +6,27 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  <body>
+    <header id="header">
+      <div id="logo">
+        <h1>Camera Check</h1>
+        <h2>Local Venue Photography Reference</h2>
+      </div>
 
-<%= yield %>
+      <%= link_to 'New Venue', new_venue_path,
+                               :remote => true,
+                               :id     => 'add_venue' %>
+    </header>
 
-</body>
+    <section id="main">
+      <aside id="sidebar">
+        <h1>Add a venue</h1>
+        <div id="new_venue_form">
+          <%= render 'form' %>
+        </div>
+      </aside>
+
+      <%= yield %>
+    </section>
+  </body>
 </html>
