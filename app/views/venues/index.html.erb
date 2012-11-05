@@ -1,10 +1,15 @@
-<div id="sidebar">
-  <h1>Add a venue</h1>
-  <div id="new_venue_form">
-    <%= render 'form' %>
+<%= link_to 'New Venue', new_venue_path,
+                         :remote => true,
+                         :id     => 'add_venue' %>
+<div id="main">
+  <div id="sidebar">
+    <h1>Add a venue</h1>
+    <div id="new_venue_form">
+      <%= render 'form' %>
+    </div>
   </div>
-</div>
 
-<div id="venues">
-  <%= render @venues %>
+  <div id="venues">
+    <%= render @venues %>
+  </div>
 </div>
