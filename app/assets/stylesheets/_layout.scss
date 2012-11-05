@@ -1,0 +1,31 @@
+#sidebar {
+  float: left;
+  width: 300px;
+}
+
+fieldset {
+  border: 0;
+}
+
+label {
+  display: block;
+  &.inline {
+    display: inline;
+  }
+}
+
+.spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  &.white {
+    background: url('/assets/spinner-white.gif') no-repeat;
+  }
+  &.pink {
+    background: url('/assets/spinner-pink.gif') no-repeat;
+  }
+}
+
+.loading .spinner {
+  display: block;
+}
