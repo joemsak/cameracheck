@@ -15,14 +15,14 @@ module AddressLookup
       end
     end
 
-      def request(options = {})
-        options = default_options.merge(options)
-        request = ::Yelp::V1::Review::Request::Location.new(options)
-      end
+    # public instance methods
 
-      private
-      def city
-        "New York"
+    def build_address(term = lookup_field_value)
+      request  = Yelp.request(:term => term)
+      response = Yelp.client.search(request)
+
+      if business = response['businesses'].first
+        self.address = address_of(business)
       end
     end
 
@@ -41,18 +41,22 @@ module AddressLookup
       end
     end
 
-    def find_address_by(field)
-      term     = send(field)
-      request  = self.class.request(:term => term)
-      response = Yelp.client.search(request)
-
-      if business = response['businesses'].first
-        build_address(business)
-      end
+    private
+    def address_of(business)
+      address_parts.map { |attr|
+        v = business[attr]
+        value = v.blank? ? nil : v
+        value << ',' if attr == 'city'
+        value
+      }.compact.join(' ')
     end
 
     def address_should_be_built?
       address.blank? and not lookup_field_value.blank?
+    end
+
+    def address_parts
+      %w(address1 address2 city state zip)
     end
 
     def lookup_field_value
