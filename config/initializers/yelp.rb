@@ -1,6 +1,8 @@
-class MustSetENVConfigYELP_WSID< Exception; end
+class MustSetENVConfigYELP_WSID < Exception; end
 
 raise MustSetENVConfigYELP_WSID unless key = ENV['YELP_WSID']
 
-AddressLookup::Yelp.api_key = key
-AddressLookup::Yelp.client  = Yelp::Client.new
+AddressLookup::Yelp.api_key        = key
+AddressLookup::Yelp.origin_city    = "New York"
+AddressLookup::Yelp.origin_state   = "NY"
+AddressLookup::Yelp.client         = Yelp::Client.new

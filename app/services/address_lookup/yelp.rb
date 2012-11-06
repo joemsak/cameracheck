@@ -1,6 +1,6 @@
 module AddressLookup
   module Yelp
-    mattr_accessor :api_key, :client
+    mattr_accessor :api_key, :client, :origin_city, :origin_state
 
     def self.included(base)
       base.extend ClassMethods
@@ -9,11 +9,11 @@ module AddressLookup
     module ClassMethods
       def lookup_address_by(field)
         before_validation do
-          if address.blank? && !send(field).blank?
-            self.address = find_address_by(field)
-          end
+          @lookup_field = field
+          build_address if address_should_be_built?
         end
       end
+    end
 
       def request(options = {})
         options = default_options.merge(options)
@@ -24,17 +24,20 @@ module AddressLookup
       def city
         "New York"
       end
+    end
 
-      def state
-        "NY"
+    class << self
+      def request(options = {})
+        options = default_options.merge(options)
+        request = ::Yelp::V1::Review::Request::Location.new(options)
       end
 
       def default_options
-        { :city   => city,
-          :state  => state,
+        { :city   => origin_city,
+          :state  => origin_state,
           :radius => 2,
           :term   => nil,
-          :yws_id => Yelp.api_key }
+          :yws_id => api_key }
       end
     end
 
@@ -48,13 +51,18 @@ module AddressLookup
       end
     end
 
-    private
-    def build_address(business)
-      %w(address1 address2 city state zip).map do |attr|
-        value = business[attr]
-        value << "," if attr == 'city'
-        value
-      end.join(' ')
+    def address_should_be_built?
+      address.blank? and not lookup_field_value.blank?
+    end
+
+    def lookup_field_value
+      @lookup_field_value ||= send(lookup_field)
+      return nil if @lookup_field_value.blank?
+      @lookup_field_value
+    end
+
+    def lookup_field
+      @lookup_field
     end
   end
 end
