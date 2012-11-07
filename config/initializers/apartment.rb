@@ -30,4 +30,4 @@ end
 
 # Rails.application.config.middleware.use 'Apartment::Elevators::Domain'
 
-Rails.application.config.middleware.use 'Apartment::Elevators::Subdomain'
+Rails.application.config.middleware.use 'Apartment::Elevators::Generic', Proc.new { |request| request.subdomains.first }
