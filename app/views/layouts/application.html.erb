@@ -10,7 +10,7 @@
     <header id="header">
       <div id="logo">
         <h1>Camera Check</h1>
-        <h2>Local Venue Photography Reference</h2>
+        <h2><%= city_name %> Photography Reference</h2>
       </div>
 
       <%= link_to 'Add venue', new_venue_path,
@@ -37,6 +37,11 @@
       </p>
       <p>
         <%= link_to 'View the source', 'http://github.com/joemsak/cameracheck' %> of this website.
+      </p>
+      <p>
+        <% alt_cities.each do |city_name, subdomain| %>
+          <%= link_to city_name, city_url(subdomain) %>&nbsp;&nbsp;&nbsp;&nbsp;
+        <% end %>
       </p>
     </footer>
   </body>
