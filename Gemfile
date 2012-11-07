@@ -5,6 +5,7 @@ gem 'yelpster'
 gem 'newrelic_rpm'
 
 gem 'pg'
+gem 'apartment'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

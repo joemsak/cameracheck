@@ -1,6 +1,6 @@
 module AddressLookup
   module Yelp
-    mattr_accessor :api_key, :client, :origin_city, :origin_state
+    mattr_accessor :api_key, :client
 
     def self.included(base)
       base.extend ClassMethods
@@ -18,7 +18,7 @@ module AddressLookup
     # public instance methods
 
     def build_address(term = lookup_field_value)
-      request  = Yelp.request(:term => term)
+      request  = Yelp.request(:term => term, :city => city, :state => state)
       response = Yelp.client.search(request)
 
       if business = response['businesses'].first
@@ -33,10 +33,7 @@ module AddressLookup
       end
 
       def default_options
-        { :city   => origin_city,
-          :state  => origin_state,
-          :radius => 2,
-          :term   => nil,
+        { :radius => 2,
           :yws_id => api_key }
       end
     end
@@ -67,6 +64,28 @@ module AddressLookup
 
     def lookup_field
       @lookup_field
+    end
+
+    def city
+      cities[schema]
+    end
+
+    def state
+      states[schema]
+    end
+
+    def cities
+      { 'nyc'     => 'New York',
+        'chicago' => 'Chicago' }
+    end
+
+    def states
+      { 'nyc'     => 'NY',
+        'chicago' => 'IL' }
+    end
+
+    def schema
+      connection.schema_search_path
     end
   end
 end
