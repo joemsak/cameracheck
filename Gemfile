@@ -19,6 +19,12 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :development do
+  gem 'silent-postgres'
+  gem 'quiet_assets'
+  gem 'thin'
+end
+
 group :test do
   gem 'vcr'
   gem 'webmock'
