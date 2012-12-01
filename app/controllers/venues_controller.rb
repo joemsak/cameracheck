@@ -1,34 +1,26 @@
 class VenuesController < ApplicationController
+  respond_to :js, :json, :html
+
   def index
-    @venues = Venue.includes(:options).all
+    respond_with(@venues = Venue.includes(:options).all)
   end
 
   def show
     @venue = Venue.includes(:options).find(params[:id])
     build_option
+    respond_with(@venue)
   end
   alias :edit :show
 
   def create
-    @venue = Venue.new(params[:venue])
-
-    respond_to do |format|
-      format.js
-    end
+    respond_with(@venue = Venue.new(params[:venue]))
   end
 
   def update
     params[:venue][:option_ids] ||= []
     @venue = Venue.includes(:options).find(params[:id])
-    respond_to do |format|
-      format.js do
-        if @venue.update_attributes(params[:venue])
-          render :update
-        else
-          render :nothing => true, :status => 403
-        end
-      end
-    end
+    @venue.update_attributes(params[:venue])
+    respond_with(@venue)
   end
 
   private
