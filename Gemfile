@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem "rails-backbone"
+
 gem 'yelpster'
+
 gem 'newrelic_rpm'
 
 gem 'pg'
