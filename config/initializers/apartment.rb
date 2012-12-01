@@ -29,5 +29,5 @@ end
 # Elevator Configuration
 
 # Rails.application.config.middleware.use 'Apartment::Elevators::Domain'
-
-Rails.application.config.middleware.use 'Apartment::Elevators::Generic', Proc.new { |request| request.subdomains.first }
+subdomain = Proc.new { |request| request.subdomains.first || 'nyc' }
+Rails.application.config.middleware.use 'Apartment::Elevators::Generic', subdomain
