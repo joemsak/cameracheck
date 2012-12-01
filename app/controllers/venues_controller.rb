@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  respond_to :js, :json, :html
+  respond_to :json, :html
 
   def index
     respond_with(@venues = Venue.includes(:options).all)
@@ -10,10 +10,23 @@ class VenuesController < ApplicationController
     build_option
     respond_with(@venue)
   end
-  alias :edit :show
+
+  def new
+    @venue = Venue.new
+    build_option
+    respond_with(@venue)
+  end
+
+  def edit
+    @venue = Venue.find(params[:id])
+    build_option
+    respond_with(@venue)
+  end
 
   def create
-    respond_with(@venue = Venue.new(params[:venue]))
+    @venue = Venue.new(params[:venue])
+    @venue.save
+    respond_with(@venue)
   end
 
   def update
@@ -24,23 +37,6 @@ class VenuesController < ApplicationController
   end
 
   private
-  def new_venue
-    @new_venue ||= Venue.new
-    build_option(@new_venue)
-    @new_venue
-  end
-  helper_method :new_venue
-
-  def all_venues
-    @all_venues ||= Venue.includes(:options).all
-  end
-  helper_method :all_venues
-
-  def all_options
-    @all_options ||= Option.includes(:venues).all
-  end
-  helper_method :all_options
-
   def build_option(venue = @venue)
     venue.options.build
   end
