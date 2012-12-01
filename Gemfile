@@ -23,6 +23,7 @@ group :development do
   gem 'silent-postgres'
   gem 'quiet_assets'
   gem 'thin'
+  gem 'heroku'
 end
 
 group :test do
