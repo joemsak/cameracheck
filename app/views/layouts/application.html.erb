@@ -13,19 +13,10 @@
         <h2><%= city_name %> Venue Photography Reference</h2>
       </div>
 
-      <%= link_to 'Add venue', new_venue_path,
-                               :remote => true,
-                               :id     => 'add_venue' %>
+      <%= link_to 'Add venue', '#/new', :id => 'add_venue' %>
     </header>
 
     <section id="main">
-      <aside id="sidebar">
-        <h1>Add a venue</h1>
-        <div id="new_venue_form">
-          <%= render 'form' %>
-        </div>
-      </aside>
-
       <%= yield %>
     </section>
 
