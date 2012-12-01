@@ -1,1 +1,3 @@
 rvm use --create 1.9.3@cameracheck
+git remote add heroku git@heroku.com:cameracheck.git
+export YELP_WSID=`heroku config:get YELP_WSID`
