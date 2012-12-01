@@ -1,9 +1,0 @@
-<%= div_for venue do %>
-  <%= render 'form', :venue => venue, :color => 'pink' %>
-
-  <%= link_to 'edit', edit_venue_path(venue),
-                      :remote => true,
-                      :class => 'edit' %>
-
-  <%= link_to 'cancel', '#', :class => 'cancel' %>
-<% end %>
