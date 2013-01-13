@@ -35,3 +35,5 @@ Cameracheck::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+ActiveSupport::Deprecation.silenced = true
