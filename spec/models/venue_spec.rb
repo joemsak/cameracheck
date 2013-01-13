@@ -13,7 +13,7 @@ describe Venue do
     Venue.any_instance.stub(:schema) { 'nyc' }
 
     VCR.use_cassette('look up venue address') do
-      venue = Venue.create!(:name => 'Majestic Theatre')
+      venue = Venue.create!(:name => 'Majestic Theater')
       venue.address.should == '245 W 44th St New York, NY 10036'
     end
   end
